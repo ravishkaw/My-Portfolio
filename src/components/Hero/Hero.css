@@ -3,6 +3,7 @@
   grid-template-columns: 1fr;
   /* gap: 20px; */
   min-height: 90vh;
+  justify-content: center;
 }
 
 .hero-left-column {
@@ -27,7 +28,7 @@
 }
 
 .hero-title {
-  font-size: 5rem;
+  font-size: 3.5rem;
   margin: 0.2rem;
 }
 
@@ -101,6 +102,10 @@
 
   .hero-desc {
     justify-self: flex-start;
+  }
+
+  .hero-title {
+    font-size: 5rem;
   }
 
   .hero-socials {

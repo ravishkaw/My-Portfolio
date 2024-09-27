@@ -1,16 +1,20 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 import logo from "../../assets/logo.svg";
-import { FaDownload } from "react-icons/fa";
+import { FaBars, FaDownload } from "react-icons/fa";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
 
   const handleClick = () => {
     setShowLinks(!showLinks);
+  };
+
+  const handleHomeClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setShowLinks(false); // Close the menu if it’s open
   };
 
   const getContainerClass = () =>
@@ -34,14 +38,40 @@ const Navbar = () => {
 
         <div className={getContainerClass()}>
           <ul className="nav-links">
-            <li>Home</li>
-            <li>Projects</li>
-            <li>Contact</li>
             <li>
-              <button className="btn nav-btn-resume">
-                Resume
-                <FaDownload />
-              </button>
+              <Link to="/" className="nav-link" onClick={handleHomeClick}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/projects"
+                className="nav-link"
+                onClick={() => {
+                  setShowLinks(false);
+                  handleHomeClick();
+                }}
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact-me"
+                className="nav-link"
+                onClick={() => setShowLinks(false)}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <a
+                href="/path/to/resume.pdf"
+                download
+                className="btn nav-btn-resume"
+              >
+                Resume <FaDownload />
+              </a>
             </li>
           </ul>
         </div>
@@ -49,4 +79,5 @@ const Navbar = () => {
     </header>
   );
 };
+
 export default Navbar;

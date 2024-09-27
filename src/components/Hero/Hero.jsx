@@ -1,7 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
 import "./Hero.css";
-// import programmerImg from "../../assets/Programmer.svg";
-import programmerImg from "../../assets/myImg.png";
+import programmerImg from "../../assets/Programmer.svg";
+// import programmerImg from "../../assets/myImg.png";
 import { socialLinks } from "../../data";
 
 const Hero = () => {
@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="hero-desc">
           <div className="typewriter-container">
             <h3>
-              Life is simple{" "}
+              Life is simple ; {" "}
               <span className="typewriter-text">
                 <Typewriter
                   words={["Eat", "Code", "Sleep", "Repeat !"]}

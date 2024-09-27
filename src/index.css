@@ -47,6 +47,7 @@ main {
   background-color: var(--primary-color-950);
   margin-top: 50px;
   padding-top: 10px;
+  overflow: hidden;
 }
 
 .main-container {

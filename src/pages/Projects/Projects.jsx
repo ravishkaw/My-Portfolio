@@ -1,0 +1,37 @@
+import useFetchProjects from "../../components/Projects/FetchProjects";
+import "./Projects.css";
+
+const Projects = () => {
+  const { loading, projects } = useFetchProjects("projects");
+
+  return (
+    <section className="sections">
+      <h1 className="title">Projects</h1>
+      <div className="title-underline"></div>
+
+      {loading ? (
+        <div className="loading"></div>
+      ) : (
+        <div className="projects-center">
+          {projects.map((project) => {
+            const { id, title, url, img } = project;
+            return (
+              <a
+                key={id}
+                href={url}
+                rel="norefferer"
+                target="_blank"
+                className="project"
+              >
+                <img src={img} alt={title} className="img" />
+                <h5>{title}</h5>
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default Projects;

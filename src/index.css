@@ -1,0 +1,114 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-white: #ffffff;
+  --primary-color-100: #f5f5f5;
+  --primary-color-200: #eeeeee;
+  --primary-color-300: #e0e0e0;
+  --primary-color-400: #bdbdbd;
+  --primary-color-500: #9e9e9e;
+  --primary-color-600: #757575;
+  --primary-color-700: #616161;
+  --primary-color-800: #424242;
+  --primary-color-900: #212121;
+  --primary-color-950: #121212;
+  --primary-color-960: #0e0e0e;
+  --primary-color-970: #0a0a0a;
+  --primary-color-980: #050505;
+  --primary-black: #000000;
+
+  /* Neon Colors for Accent */
+  --neon-pink: #ff1dce;
+  --neon-green: #39ff14;
+  --neon-blue: #0ff0fc;
+  --neon-yellow: #f8ff00;
+  --neon-orange: #ff6e00;
+  --neon-purple: #b033ff;
+
+  /* Neon Purple Text Shadow */
+  --shadow-neon-purple: 0 0 2px var(--neon-purple), 0 0 4px var(--neon-purple),
+    0 0 6px var(--neon-purple);
+
+  /* Border */
+  --border-radius: 0.25rem;
+
+  /* Transition */
+  --transition: 200ms;
+}
+
+main {
+  background-color: var(--primary-color-950);
+  margin-top: 50px;
+  padding-top: 10px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  color: var(--primary-white);
+  padding: 0.5rem 1rem;
+  /* border: 1px solid blue; */
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.title-underline {
+  height: 3px;
+  width: 4rem;
+  background-color: var(--neon-purple);
+  box-shadow: var(--shadow-neon-purple);
+  margin: 0.25rem auto;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.sections {
+  /* border: 1px solid blue; */
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.loading {
+  margin: 2rem auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 4px solid var(--neon-purple);
+  border-top-color: var(--neon-pink);
+  animation: spinner 0.6s linear infinite;
+}
+
+.btn {
+  outline: none;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-white);
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

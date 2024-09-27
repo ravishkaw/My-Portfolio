@@ -1,0 +1,124 @@
+/* Header Section  */
+header {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-center {
+  padding: 0.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-black);
+}
+
+.nav-logo {
+  width: 100px;
+}
+
+.nav-toggle-button {
+  background: transparent;
+  color: var(--primary-white);
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-toggle-button:hover {
+  color: var(--primary-color-600);
+}
+
+.nav-links-container {
+  background-color: var(--primary-black);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition) ease-in-out;
+}
+
+.nav-show-container {
+  max-height: 400px;
+}
+
+.nav-links {
+  list-style-type: none;
+}
+
+.nav-links li {
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-links li:hover {
+  padding-left: 3rem;
+}
+
+.nav-links li:last-child:hover {
+  padding-left: 2rem;
+}
+
+.btn.nav-btn-resume {
+  color: white;
+  background-color: var(--neon-purple);
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.nav-btn-resume:hover {
+  background-color: var(--neon-pink);
+  transition: var(--transition);
+}
+
+@media screen and (min-width: 768px) {
+  .nav-toggle-button {
+    display: none;
+  }
+
+  .nav-center {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-links-container {
+    display: flex !important;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .nav-links li {
+    padding: 0;
+  }
+
+  .nav-links li:hover {
+    padding: 0;
+  }
+
+  .nav-links li:last-child:hover {
+    padding: 0;
+  }
+}

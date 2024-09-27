@@ -1,0 +1,34 @@
+.about-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.about-info {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.about-img-container {
+  display: none;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* align-items: center; */
+  }
+  .about-img-container {
+    display: block;
+  }
+
+  
+.about-info {
+  text-align: unset;
+}
+}

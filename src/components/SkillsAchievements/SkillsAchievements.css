@@ -1,0 +1,100 @@
+.skills-achievements-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.skills-container,
+.achievements-container {
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-white);
+}
+
+.skills-grid,
+.achievements-grid {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  align-items: stretch;
+}
+
+.achievements-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skills-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skill-item,
+.achievement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--primary-white);
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 15rem;
+}
+
+.skill-icon,
+.achievement-icon {
+  font-size: 2rem;
+  padding: 1rem 1rem 0.2rem 1rem;
+}
+
+.skill-name,
+.achievement-title {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.achievement-title {
+  font-size: 1rem;
+}
+
+.skill-name {
+  font-size: 0.8rem;
+}
+.achievement-description {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.skill-item:hover,
+.achievement-item:hover {
+  border: 2px solid var(--neon-purple);
+  color: var(--neon-purple);
+  box-shadow: var(--shadow-neon-purple);
+}
+
+@media screen and (min-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(6, auto);
+  }
+
+  .skill-icon,
+  .achievement-icon {
+    font-size: 3rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+}

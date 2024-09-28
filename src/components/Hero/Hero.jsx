@@ -1,7 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
 import "./Hero.css";
-import programmerImg from "../../assets/Programmer.svg";
-// import programmerImg from "../../assets/myImg.png";
+// import programmerImg from "../../assets/Programmer.svg";
+import programmerImg from "../../assets/myImg.png";
 import { socialLinks } from "../../data";
 
 const Hero = () => {

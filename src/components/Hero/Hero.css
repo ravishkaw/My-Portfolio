@@ -1,13 +1,10 @@
 .hero-section {
   display: grid;
   grid-template-columns: 1fr;
-  /* gap: 20px; */
   min-height: 90vh;
-  justify-content: center;
 }
 
 .hero-left-column {
-  /* border: 1px solid red; */
   display: grid;
   grid-template-rows: auto 50px 50px;
   gap: 1.2rem;
@@ -16,7 +13,6 @@
 .hero-intro,
 .hero-desc {
   align-self: center;
-  /* border: 1px solid orange; */
   padding-left: 1rem;
   text-align: center;
 }
@@ -57,7 +53,6 @@
 }
 
 .hero-socials {
-  /* border: 1px solid orange; */
   margin-top: 0.4rem;
   padding: 1rem;
   display: flex;
@@ -73,13 +68,11 @@
 
 .hero-right-column {
   display: none;
-  /* border: 1px solid red; */
   justify-content: flex-start;
   align-content: center;
 }
 
 .hero-img {
-  /* border: 1px solid orange; */
   border-radius: 50%;
   width: 100%;
   max-width: 400px;

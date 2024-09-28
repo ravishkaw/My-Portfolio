@@ -1,11 +1,22 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaHtml5, FaCss3, FaReact, FaNode, FaJava } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaGithub,
+  FaAward,
+  FaReact,
+  FaNode,
+  FaJava,
+  FaTrophy,
+  FaCertificate,
+} from "react-icons/fa";
 import { SiExpress, SiJavascript, SiSpringboot } from "react-icons/si";
 
 export const socialLinks = [
   {
     id: 1,
     name: "linkedin",
-    url: "",
+    url: "https://www.linkedin.com/in/ravishka-wijerathne",
     icon: <FaLinkedin />,
   },
   {
@@ -28,6 +39,34 @@ export const socialLinks = [
   },
 ];
 
+export const achievements = [
+  {
+    id: 1,
+    title: "Diploma in IT",
+    description:
+      "Awarded for outstanding contribution in full-stack development.",
+    icon: <FaAward />,
+  },
+  {
+    id: 2,
+    title: "Certified Frontend Developer",
+    description: "Won 1st place at the 2023 Global Hackathon event.",
+    icon: <FaTrophy />,
+  },
+  {
+    id: 3,
+    title: "Certified React Developer",
+    description: "Certified by XYZ Academy for mastering React.js.",
+    icon: <FaCertificate />,
+  },
+  {
+    id: 4,
+    title: "Certified React Developer",
+    description: "Certified by XYZ Academy for mastering React.js.",
+    icon: <FaCertificate />,
+  },
+];
+
 export const skills = [
   {
     id: 1,
@@ -41,7 +80,7 @@ export const skills = [
   },
   {
     id: 3,
-    name: "css",
+    name: "node",
     icon: <FaNode />,
   },
   {
@@ -56,7 +95,7 @@ export const skills = [
   },
   {
     id: 6,
-    name: "spring",
+    name: "springboot",
     icon: <SiSpringboot />,
   },
 ];

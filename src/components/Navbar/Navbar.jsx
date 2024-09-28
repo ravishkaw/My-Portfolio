@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const handleHomeClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setShowLinks(false); // Close the menu if it’s open
+    setShowLinks(false); 
   };
 
   const getContainerClass = () =>
@@ -38,15 +38,14 @@ const Navbar = () => {
 
         <div className={getContainerClass()}>
           <ul className="nav-links">
-            <li>
-              <Link to="/" className="nav-link" onClick={handleHomeClick}>
+            <li className="nav-link">
+              <Link to="/" onClick={handleHomeClick}>
                 Home
               </Link>
             </li>
-            <li>
+            <li className="nav-link">
               <Link
                 to="/projects"
-                className="nav-link"
                 onClick={() => {
                   setShowLinks(false);
                   handleHomeClick();
@@ -55,23 +54,17 @@ const Navbar = () => {
                 Projects
               </Link>
             </li>
-            <li>
-              <Link
-                to="/contact-me"
-                className="nav-link"
-                onClick={() => setShowLinks(false)}
-              >
+            <li className="nav-link">
+              <Link to="/contact-me" onClick={() => setShowLinks(false)}>
                 Contact
               </Link>
             </li>
-            <li>
-              <a
-                href="/path/to/resume.pdf"
-                download
-                className="btn nav-btn-resume"
-              >
-                Resume <FaDownload />
-              </a>
+            <li className="nav-link">
+              <button className="btn nav-btn-resume">
+                <a href="/path/to/resume.pdf" download>
+                  Resume <FaDownload />
+                </a>
+              </button>
             </li>
           </ul>
         </div>

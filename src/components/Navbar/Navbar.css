@@ -55,28 +55,32 @@ header {
 }
 
 .nav-link {
-  padding: 0.5rem 2rem;
+  padding: 0 2rem;
   cursor: pointer;
   transition: var(--transition);
 }
 
 .nav-link:hover {
   padding-left: 3rem;
+  background-color: var(--primary-color-900);
 }
 
 .nav-link:last-child:hover {
   padding-left: 2rem;
+  cursor: default;
+  background-color: transparent;
+}
+
+.nav-link a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
 }
 
 .btn.nav-btn-resume {
-  color: white;
   background-color: var(--neon-purple);
-  padding: 0.25rem 0.5rem;
-  font-size: 1rem;
   border-radius: var(--border-radius);
-  display: flex;
-  gap: 0.3rem;
-  align-items: center;
 }
 
 .nav-btn-resume:hover {
@@ -106,19 +110,27 @@ header {
 
   .nav-links {
     display: flex;
-    gap: 4rem;
+    gap: 1.2rem;
     align-items: center;
   }
 
   .nav-link {
-    padding: 0;
+    padding: unset;
+    border-radius: var(--border-radius);
+  }
+
+  .nav-link a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 1rem;
   }
 
   .nav-link:hover {
-    padding: 0;
+    padding: unset;
   }
 
   .nav-link:last-child:hover {
-    padding: 0;
+    padding: unset;
   }
 }

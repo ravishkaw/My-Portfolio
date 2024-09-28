@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="hero-desc">
           <div className="typewriter-container">
             <h3>
-              Life is simple ; {" "}
+              Life is simple ;{" "}
               <span className="typewriter-text">
                 <Typewriter
                   words={["Eat", "Code", "Sleep", "Repeat !"]}
@@ -42,7 +42,9 @@ const Hero = () => {
             const { id, url, icon } = link;
             return (
               <div className="hero-social-icon" key={id}>
-                <a href={url}>{icon}</a>
+                <a href={url} target="_blank">
+                  {icon}
+                </a>
               </div>
             );
           })}

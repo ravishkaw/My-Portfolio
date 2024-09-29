@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -13,7 +13,7 @@ import Contact from "./pages/Contact/Contact";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       <main>
         <div className="main-container">
@@ -35,7 +35,7 @@ const App = () => {
         </div>
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 

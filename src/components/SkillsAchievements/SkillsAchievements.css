@@ -9,6 +9,7 @@
 .achievements-container {
   padding: 0.75rem;
   border-radius: var(--border-radius);
+  color: var(--primary-color-300);
 }
 
 .sub-title {
@@ -39,12 +40,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid var(--primary-white);
+  border: 2px solid var(--primary-color-600);
   border-radius: var(--border-radius);
   transition: all 0.2s ease;
-  padding: 1rem 0;
+  padding: 1rem 0.2rem;
   width: 100%;
-  max-width: 15rem;
+  max-width: 50rem;
+}
+
+.achievement-item {
+  min-height: 15rem;
 }
 
 .skill-icon,
@@ -60,13 +65,36 @@
   font-weight: bold;
   text-transform: capitalize;
 }
+
 .achievement-title {
+  font-size: 1.1rem;
+}
+
+.achievement-company {
   font-size: 1rem;
+  text-align: center;
+}
+
+.achieve-btn-container {
+  padding-top: 0.75rem;
+  text-align: right;
+}
+
+.achieve-btn {
+  color: var(--primary-color-300);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.achieve-btn:hover {
+  color: var(--neon-purple);
 }
 
 .skill-name {
   font-size: 0.8rem;
 }
+
 .achievement-description {
   font-size: 0.8rem;
   text-align: center;
@@ -82,7 +110,7 @@
 
 @media screen and (min-width: 768px) {
   .achievements-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .skills-grid {

@@ -40,57 +40,21 @@ export const navLinks = [
   },
 ];
 
-export const socialLinks = [
-  {
-    id: 1,
-    name: "linkedin",
-    url: "https://www.linkedin.com/in/ravishka-wijerathne",
-    icon: <FaLinkedin />,
-  },
-  {
-    id: 2,
-    name: "github",
-    url: "",
-    icon: <FaGithub />,
-  },
-  {
-    id: 3,
-    name: "facebook",
-    url: "",
-    icon: <FaFacebook />,
-  },
-  {
-    id: 4,
-    name: "instagram",
-    url: "",
-    icon: <FaInstagram />,
-  },
-];
-
 export const achievements = [
   {
     id: 1,
-    title: "Diploma in IT",
+    title: "Higher Diploma in IT",
+    company: "UCSC",
     description:
-      "Awarded for outstanding contribution in full-stack development.",
+      "Successfully completed a comprehensive Higher Diploma program, focusing on full-stack development, software engineering, and database management at the University of Colombo School of Computing (UCSC).",
     icon: <FaAward />,
   },
   {
     id: 2,
-    title: "Certified Frontend Developer",
-    description: "Won 1st place at the 2023 Global Hackathon event.",
-    icon: <FaTrophy />,
-  },
-  {
-    id: 3,
-    title: "Certified React Developer",
-    description: "Certified by XYZ Academy for mastering React.js.",
-    icon: <FaCertificate />,
-  },
-  {
-    id: 4,
-    title: "Certified React Developer",
-    description: "Certified by XYZ Academy for mastering React.js.",
+    title: "Certified Front-End Developer",
+    company: "Meta",
+    description:
+      "Awarded a prestigious Front-End Developer certification from Meta, mastering HTML, CSS, JavaScript, and React.js to create dynamic, responsive web applications.",
     icon: <FaCertificate />,
   },
 ];
@@ -125,5 +89,32 @@ export const skills = [
     id: 6,
     name: "springboot",
     icon: <SiSpringboot />,
+  },
+];
+
+export const socialLinks = [
+  {
+    id: 1,
+    name: "linkedin",
+    url: "https://www.linkedin.com/in/ravishka-wijerathne",
+    icon: <FaLinkedin />,
+  },
+  {
+    id: 2,
+    name: "github",
+    url: "",
+    icon: <FaGithub />,
+  },
+  {
+    id: 3,
+    name: "facebook",
+    url: "",
+    icon: <FaFacebook />,
+  },
+  {
+    id: 4,
+    name: "instagram",
+    url: "",
+    icon: <FaInstagram />,
   },
 ];

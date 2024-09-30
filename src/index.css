@@ -43,9 +43,12 @@
   --transition: 200ms;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   background-color: var(--primary-color-950);
-  margin-top: 50px;
   overflow: hidden;
 }
 
@@ -53,7 +56,7 @@ main {
   display: flex;
   flex-direction: column;
   color: var(--primary-white);
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   /* border: 1px solid green; */
 }
 
@@ -73,9 +76,8 @@ main {
 }
 
 .sections {
-  /* border: 1px solid blue; */
-  margin-bottom: 3rem;
   padding: 0.75rem;
+  min-height: 100vh;
 }
 
 .loading {

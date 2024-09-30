@@ -2,52 +2,58 @@ import { Typewriter } from "react-simple-typewriter";
 import "./Hero.css";
 // import programmerImg from "../../assets/Programmer.svg";
 import programmerImg from "../../assets/myImg.png";
-import { socialLinks } from "../../data";
+
+import { FaDownload } from "react-icons/fa";
 
 const Hero = () => {
   return (
     <section className="sections hero-section">
       <div className="hero-left-column">
-        <div className="hero-intro">
-          <h3 className="hero-up-title">Hello,</h3>
+        <header className="hero-intro">
+          <h2 className="hero-up-title">Hello,</h2>
           <h1 className="hero-title">
             I am <span className="hero-stroke-text">Ravishka</span>
           </h1>
-          <h3 className="hero-sub-title">
-            A passionate developer from Sri Lanka
-          </h3>
-        </div>
+          <p className="hero-info">
+            Innovating with Code, One Line at a Time
+          </p>
+        </header>
 
         <div className="hero-desc">
-          <div className="typewriter-container">
-            <h3>
-              Life is simple ;{" "}
-              <span className="typewriter-text">
-                <Typewriter
-                  words={["Eat", "Code", "Sleep", "Repeat !"]}
-                  loop={0}
-                  cursor
-                  cursorStyle="_"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-              </span>
-            </h3>
-          </div>
+          <h2>
+            Let's{" "}
+            <span className="typewriter-text">
+              <Typewriter
+                words={["Create", "Innovate", "Inspire", "Build!"]}
+                loop={0}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+          </h2>
         </div>
 
-        <div className="hero-socials">
-          {socialLinks.map((link) => {
-            const { id, url, icon } = link;
-            return (
-              <div className="hero-social-icon" key={id}>
-                <a href={url} target="_blank">
-                  {icon}
-                </a>
-              </div>
-            );
-          })}
+        <div className="hero-btn-container">
+          <button
+            className="btn btn-hero btn-hero-contact"
+            aria-label="Contact Me Button"
+          >
+            <a href="#about">Contact Me</a>
+          </button>
+          <button
+            className="btn btn-hero btn-hero-resume"
+            aria-label="Resume Button"
+          >
+            <a href="https://www.github.com/ravishkaw" target="_blank">
+              Resume{" "}
+              <span className="resume-download-icon">
+                <FaDownload />
+              </span>
+            </a>
+          </button>
         </div>
       </div>
 
@@ -55,11 +61,12 @@ const Hero = () => {
         <img
           className="hero-img"
           src={programmerImg}
-          alt="programmerImg"
+          alt="An illustration of a programmer coding on a laptop"
           loading="lazy"
         />
       </div>
     </section>
   );
 };
+
 export default Hero;

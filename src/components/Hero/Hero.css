@@ -1,20 +1,21 @@
 .hero-section {
   display: grid;
-  grid-template-columns: 1fr;
-  min-height: 90vh;
 }
 
 .hero-left-column {
   display: grid;
-  grid-template-rows: auto 50px 50px;
-  gap: 1.2rem;
+  grid-template-rows: auto auto auto;
+  gap: 0.8rem;
+  margin-bottom: 4rem;
 }
 
 .hero-intro,
 .hero-desc {
-  align-self: center;
-  padding-left: 1rem;
   text-align: center;
+}
+
+.hero-intro {
+  align-self: self-end;
 }
 
 .hero-up-title {
@@ -24,52 +25,69 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 0.2rem;
 }
 
 .hero-stroke-text {
   color: var(--primary-black);
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1.5px white;
   text-shadow: 0 0 2px white, 0 0 4px white;
 }
 
-.hero-sub-title {
+.hero-info {
   margin: 0.4rem;
   color: var(--primary-color-400);
 }
 
-.typewriter-container {
-  border: 3px solid var(--neon-purple);
-  width: fit-content;
+.hero-btn-container {
+  text-align: center;
+}
+
+.btn.btn-hero {
+  color: var(--primary-white);
   border-radius: 2rem;
-  box-shadow: var(--shadow-neon-purple);
   padding: 0.5rem 0.75rem;
-  margin: 0 auto;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--neon-purple);
+}
+
+.btn.btn-hero-resume {
+  border: 1px solid var(--neon-purple);
+  background-color: #a24cf2;
+}
+
+.resume-download-icon {
+  margin-left: 0.3rem;
+  font-size: 0.75rem;
+}
+
+.btn.btn-hero-contact:hover {
+  background-color: #a24cf2;
+}
+
+.btn.btn-hero-resume:hover {
+  background-color: var(--neon-pink);
+  border: 1px solid var(--neon-pink);
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  align-self: center;
 }
 
 .typewriter-text {
-  color: var(--neon-purple);
-}
-
-.hero-socials {
-  margin-top: 0.4rem;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.5rem;
-}
-
-.hero-socials a:hover {
-  color: var(--neon-purple);
+  color: #a24cf2;
 }
 
 .hero-right-column {
   display: none;
   justify-content: flex-start;
   align-content: center;
+  margin-bottom: 4rem;
 }
 
 .hero-img {
@@ -101,7 +119,7 @@
     font-size: 5rem;
   }
 
-  .hero-socials {
-    justify-content: unset;
+  .hero-btn-container {
+    text-align: unset;
   }
 }

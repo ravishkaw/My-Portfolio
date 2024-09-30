@@ -1,75 +1,38 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import { navLinks } from "../../data";
 import "./Navbar.css";
 
-import logo from "../../assets/logo.svg";
-import { FaBars, FaDownload } from "react-icons/fa";
-
 const Navbar = () => {
-  const [showLinks, setShowLinks] = useState(false);
-
-  const handleClick = () => {
-    setShowLinks(!showLinks);
-  };
-
   const handleHomeClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setShowLinks(false); 
   };
 
-  const getContainerClass = () =>
-    showLinks
-      ? "nav-links-container nav-show-container"
-      : "nav-links-container";
-
   return (
-    <header>
-      <nav className="nav-center">
-        <div className="nav-header">
-          <img src={logo} alt="logo" className="nav-logo" />
-          <button
-            onClick={handleClick}
-            className="nav-toggle-button"
-            aria-expanded={showLinks}
-          >
-            <FaBars />
-          </button>
-        </div>
+    <nav className="nav-links-container">
+      <ul className="nav-links">
+        {navLinks.map((link) => {
+          const { id, name, url, icon } = link;
+          const isHashLink = url.includes("#");
 
-        <div className={getContainerClass()}>
-          <ul className="nav-links">
-            <li className="nav-link">
-              <Link to="/" onClick={handleHomeClick}>
-                Home
-              </Link>
+          return (
+            <li key={id}>
+              {isHashLink ? (
+                <HashLink smooth to={url} className="nav-link">
+                  <span className="nav-icon">{icon}</span>
+                  <span className="nav-title">{name}</span>
+                </HashLink>
+              ) : (
+                <Link to={url} className="nav-link" onClick={handleHomeClick}>
+                  <span className="nav-icon">{icon}</span>
+                  <span className="nav-title">{name}</span>
+                </Link>
+              )}
             </li>
-            <li className="nav-link">
-              <Link
-                to="/projects"
-                onClick={() => {
-                  setShowLinks(false);
-                  handleHomeClick();
-                }}
-              >
-                Projects
-              </Link>
-            </li>
-            <li className="nav-link">
-              <Link to="/contact-me" onClick={() => setShowLinks(false)}>
-                Contact
-              </Link>
-            </li>
-            <li className="nav-link">
-              <button className="btn nav-btn-resume">
-                <a href="/path/to/resume.pdf" download>
-                  Resume <FaDownload />
-                </a>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+          );
+        })}
+      </ul>
+    </nav>
   );
 };
 

@@ -10,7 +10,35 @@ import {
   FaTrophy,
   FaCertificate,
 } from "react-icons/fa";
+import { GoHome, GoPerson, GoProjectRoadmap, GoStar } from "react-icons/go";
 import { SiExpress, SiJavascript, SiSpringboot } from "react-icons/si";
+
+export const navLinks = [
+  {
+    id: 1,
+    name: "home",
+    url: "/",
+    icon: <GoHome />,
+  },
+  {
+    id: 2,
+    name: "achivements",
+    url: "/#achievements",
+    icon: <GoStar />,
+  },
+  {
+    id: 3,
+    name: "projects",
+    url: "/#projects",
+    icon: <GoProjectRoadmap />,
+  },
+  {
+    id: 4,
+    name: "about",
+    url: "/#about",
+    icon: <GoPerson />,
+  },
+];
 
 export const socialLinks = [
   {

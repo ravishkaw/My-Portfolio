@@ -11,7 +11,7 @@ import {
   FaCertificate,
 } from "react-icons/fa";
 import { GoHome, GoPerson, GoProjectRoadmap, GoStar } from "react-icons/go";
-import { MdEmail, MdPhoneAndroid } from "react-icons/md";
+import { MdEmail, MdPhoneAndroid, MdWhatsapp } from "react-icons/md";
 import { SiExpress, SiJavascript, SiSpringboot } from "react-icons/si";
 
 export const navLinks = [
@@ -106,6 +106,12 @@ export const contacts = [
     url: "tel:+94775048662",
     icon: <MdPhoneAndroid />,
   },
+  {
+    id: 3,
+    details: "Chat on WhatsApp",
+    url: "https://wa.me/message/TXZIG3WXVCNGD1",
+    icon: <MdWhatsapp />,
+  },
 ];
 
 export const socialLinks = [
@@ -118,19 +124,19 @@ export const socialLinks = [
   {
     id: 2,
     name: "github",
-    url: "",
+    url: "https://www.github.com/ravishkaw",
     icon: <FaGithub />,
   },
   {
     id: 3,
     name: "facebook",
-    url: "",
+    url: "https://www.facebook.com/ravishka.wijerathne",
     icon: <FaFacebook />,
   },
   {
     id: 4,
     name: "instagram",
-    url: "",
+    url: "https://www.instagram.com/ravishka_wijerathne",
     icon: <FaInstagram />,
   },
 ];

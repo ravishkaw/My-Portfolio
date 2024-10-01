@@ -11,6 +11,7 @@ import {
   FaCertificate,
 } from "react-icons/fa";
 import { GoHome, GoPerson, GoProjectRoadmap, GoStar } from "react-icons/go";
+import { MdEmail, MdPhoneAndroid } from "react-icons/md";
 import { SiExpress, SiJavascript, SiSpringboot } from "react-icons/si";
 
 export const navLinks = [
@@ -89,6 +90,21 @@ export const skills = [
     id: 6,
     name: "springboot",
     icon: <SiSpringboot />,
+  },
+];
+
+export const contacts = [
+  {
+    id: 1,
+    details: "ravishkawj@gmail.com",
+    url: "mailto:ravishkawj@gmail.com",
+    icon: <MdEmail />,
+  },
+  {
+    id: 2,
+    details: "+94 77 504 8662",
+    url: "tel:+94775048662",
+    icon: <MdPhoneAndroid />,
   },
 ];
 

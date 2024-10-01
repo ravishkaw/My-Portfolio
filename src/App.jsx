@@ -9,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 
 // Pages
 import ProjectsPage from "./pages/Projects/Projects";
-import Contact from "./pages/Contact/Contact";
+import Achievements from "./pages/Achievements/Achievements";
 
 const App = () => {
   return (
@@ -30,7 +30,7 @@ const App = () => {
               }
             />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/contact-me" element={<Contact />} />
+            <Route path="/achievements" element={<Achievements />} />
           </Routes>
         </div>
       </main>

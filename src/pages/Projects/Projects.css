@@ -46,3 +46,42 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+/* 
+
+.home-projects {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project-card {
+  position: relative;
+}
+
+.project-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-card-img {
+  transform: scale(1.1);
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .card-info {
+  opacity: 1;
+} */

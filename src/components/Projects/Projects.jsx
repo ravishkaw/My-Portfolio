@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useFetchProjects from "./FetchProjects";
 import "./Projects.css";
 
@@ -5,7 +6,7 @@ const Projects = () => {
   const { loading, projects } = useFetchProjects("portfolioHomeProjects");
 
   return (
-    <section className="sections">
+    <section className="sections" id="projects">
       <h1 className="title">Projects</h1>
       <div className="title-underline"></div>
 
@@ -14,22 +15,29 @@ const Projects = () => {
       ) : (
         <div className="home-projects">
           {projects.map((project) => (
-            <div key={project.id} className="project-card">
-              <div className="card-img">
-                <img
-                  className="project-card-img "
-                  src={project.img}
-                  alt={project.title}
-                />
-              </div>
+            <a href={project.url} target="_blank">
+              <div key={project.id} className="project-card">
+                <div className="card-img">
+                  <img
+                    className="project-card-img "
+                    src={project.img}
+                    alt={project.title}
+                  />
+                </div>
 
-              <div className="card-info">
-                <h4>{project.title}</h4>
+                <div className="card-info">
+                  <h4>{project.title}</h4>
+                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       )}
+      <div className="btn-container">
+        <Link to="/projects" className="show-more-proj-btn">
+          Show More
+        </Link>
+      </div>
     </section>
   );
 };

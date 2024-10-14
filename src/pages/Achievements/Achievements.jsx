@@ -1,10 +1,8 @@
 import { useEffect } from "react";
-import useFetchProjects from "../../components/Projects/FetchProjects";
+import { achievementsData } from "../../data";
 import "./Achievements.css";
 
 const Achievements = () => {
-  const { loading, projects } = useFetchProjects("projects");
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -13,29 +11,20 @@ const Achievements = () => {
     <section className="sections">
       <h1 className="title">Achievements</h1>
       <div className="title-underline"></div>
-      <h2 style={{ textAlign: "center", color:"gray" }}>This page is under construction !</h2>
-
-      {/* {loading ? (
-        <div className="loading"></div>
-      ) : (
-        <div className="projects-center">
-          {projects.map((project) => {
-            const { id, title, url, img } = project;
-            return (
-              <a
-                key={id}
-                href={url}
-                rel="norefferer"
-                target="_blank"
-                className="project"
-              >
-                <img src={img} alt={title} className="img" />
-                <h5>{title}</h5>
-              </a>
-            );
-          })}
-        </div>
-      )} */}
+      <div className="timeline">
+        {achievementsData.map((achievement, index) => (
+          <div
+            key={index}
+            className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
+          >
+            <div className="timeline-content">
+              <h3>{achievement.date}</h3>
+              <h4>{achievement.title}</h4>
+              <p>{achievement.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

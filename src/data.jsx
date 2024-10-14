@@ -60,6 +60,41 @@ export const achievements = [
   },
 ];
 
+// More achivements
+export const achievementsData = [
+  {
+    date: "2024-08-15",
+    title: "Higher Diploma in IT",
+    description:
+      "Successfully completed a comprehensive Higher Diploma program, focusing on full-stack development, software engineering, and database management at the University of Colombo School of Computing (UCSC).",
+  },
+  {
+    date: "2021-11-20",
+    title: "Completed React Course",
+    description: "Completed an advanced course in React with excellent grades.",
+  },
+  {
+    date: "2021-11-20",
+    title: "Completed React Course",
+    description: "Completed an advanced course in React with excellent grades.",
+  },
+  {
+    date: "2021-11-20",
+    title: "Completed React Course",
+    description: "Completed an advanced course in React with excellent grades.",
+  },
+  {
+    date: "2021-11-20",
+    title: "Completed React Course",
+    description: "Completed an advanced course in React with excellent grades.",
+  },
+  {
+    date: "2021-11-20",
+    title: "Completed React Course",
+    description: "Completed an advanced course in React with excellent grades.",
+  },
+];
+
 export const skills = [
   {
     id: 1,

@@ -27,7 +27,7 @@ const SkillsAchievements = () => {
           </div>
           <div className="achieve-btn-container">
             <Link to="/achievements" className="achieve-btn">
-              <em>see more</em> <FaRegArrowAltCircleRight />
+              <em>View My Achievements</em> <FaRegArrowAltCircleRight />
             </Link>
           </div>
         </div>

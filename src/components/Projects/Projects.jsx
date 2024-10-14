@@ -15,13 +15,18 @@ const Projects = () => {
       ) : (
         <div className="home-projects">
           {projects.map((project) => (
-            <a href={project.url} target="_blank" key={project.id}>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={project.id}
+            >
               <div className="project-card">
                 <div className="card-img">
                   <img
-                    className="project-card-img "
+                    className="project-card-img"
                     src={project.img}
-                    alt={project.title}
+                    alt={`Screenshot of ${project.title}`} 
                   />
                 </div>
 

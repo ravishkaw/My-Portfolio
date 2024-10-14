@@ -26,6 +26,7 @@
   border-radius: 8px;
   border: 2px solid white;
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.623);
+  transition: 0.3s ease-in-out all;
 }
 
 .timeline-content h3 {
@@ -47,7 +48,7 @@
   border: 2px solid var(--neon-purple);
   color: var(--neon-purple);
   box-shadow: var(--shadow-neon-purple);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 @media (min-width: 768px) {

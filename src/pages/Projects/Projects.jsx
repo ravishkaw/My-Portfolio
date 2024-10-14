@@ -13,9 +13,7 @@ const Projects = () => {
     <section className="sections">
       <h1 className="title">Projects</h1>
       <div className="title-underline"></div>
-
-      <h2 style={{textAlign:"center"}}>Page is still under construction !</h2>
-
+      
       {loading ? (
         <div className="loading"></div>
       ) : (

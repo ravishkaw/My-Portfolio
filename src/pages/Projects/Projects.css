@@ -1,29 +1,20 @@
-/* projects section */
 .projects {
   padding: 5rem 0;
 }
 
-.projects-center {
-  width: 90vw; /* var(--view-width) */
-  max-width: 1120px; /* var(--max-width) */
-  margin: 3rem auto 0 auto;
-  display: grid;
-  gap: 2rem;
-}
-
 .project {
-  background: #fff; /* var(--white) */
+  border: 2px solid white;
   display: block;
-  border-radius: 0.25rem; /* var(--borderRadius) */
+  border-radius: 0.35rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* var(--shadow-2) */
-  transition: 0.3s ease-in-out all; /* var(--transition) */
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out all;
 }
 
 .project:hover {
   transform: scale(1.05);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04); /* var(--shadow-4) */
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .project .img {
@@ -31,8 +22,21 @@
   display: block;
   object-fit: cover;
   height: 15rem;
-  border-top-right-radius: 0.25rem; /* var(--borderRadius) */
-  border-top-left-radius: 0.25rem; /* var(--borderRadius) */
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.projects-center {
+  width: 90vw;
+  max-width: 1120px;
+  margin: 3rem auto 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.projects-center a h5 {
+  padding: 0.35rem;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -46,42 +50,3 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-/* 
-
-.home-projects {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.project-card {
-  position: relative;
-}
-
-.project-card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.project-card:hover .project-card-img {
-  transform: scale(1.1);
-}
-
-.card-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 0.5rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.project-card:hover .card-info {
-  opacity: 1;
-} */

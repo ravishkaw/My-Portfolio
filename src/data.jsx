@@ -69,30 +69,36 @@ export const achievementsData = [
       "Successfully completed a comprehensive Higher Diploma program, focusing on full-stack development, software engineering, and database management at the University of Colombo School of Computing (UCSC).",
   },
   {
-    date: "2021-11-20",
-    title: "Completed React Course",
-    description: "Completed an advanced course in React with excellent grades.",
+    date: "2024-07-15",
+    title: "Diploma in IT",
+    description:
+      "Successfully completed a comprehensive Diploma program, focusing on f software engineering, and database at the University of Colombo School of Computing (UCSC).",
   },
-  {
-    date: "2021-11-20",
-    title: "Completed React Course",
-    description: "Completed an advanced course in React with excellent grades.",
-  },
-  {
-    date: "2021-11-20",
-    title: "Completed React Course",
-    description: "Completed an advanced course in React with excellent grades.",
-  },
-  {
-    date: "2021-11-20",
-    title: "Completed React Course",
-    description: "Completed an advanced course in React with excellent grades.",
-  },
-  {
-    date: "2021-11-20",
-    title: "Completed React Course",
-    description: "Completed an advanced course in React with excellent grades.",
-  },
+  // {
+  //   date: "2021-11-20",
+  //   title: "Completed React Course",
+  //   description: "Completed an advanced course in React with excellent grades.",
+  // },
+  // {
+  //   date: "2021-11-20",
+  //   title: "Completed React Course",
+  //   description: "Completed an advanced course in React with excellent grades.",
+  // },
+  // {
+  //   date: "2021-11-20",
+  //   title: "Completed React Course",
+  //   description: "Completed an advanced course in React with excellent grades.",
+  // },
+  // {
+  //   date: "2021-11-20",
+  //   title: "Completed React Course",
+  //   description: "Completed an advanced course in React with excellent grades.",
+  // },
+  // {
+  //   date: "2021-11-20",
+  //   title: "Completed React Course",
+  //   description: "Completed an advanced course in React with excellent grades.",
+  // },
 ];
 
 export const skills = [
@@ -106,16 +112,16 @@ export const skills = [
     name: "react",
     icon: <FaReact />,
   },
-  {
-    id: 3,
-    name: "node",
-    icon: <FaNode />,
-  },
-  {
-    id: 4,
-    name: "express",
-    icon: <SiExpress />,
-  },
+  // {
+  //   id: 3,
+  //   name: "node",
+  //   icon: <FaNode />,
+  // },
+  // {
+  //   id: 4,
+  //   name: "express",
+  //   icon: <SiExpress />,
+  // },
   {
     id: 5,
     name: "java",

@@ -32,7 +32,8 @@
 }
 
 .skills-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
 }
 
 .skill-item,
@@ -114,7 +115,8 @@
   }
 
   .skills-grid {
-    grid-template-columns: repeat(6, auto);
+    /* grid-template-columns: repeat(6, auto); */
+    grid-template-columns: repeat(4, auto);
   }
 
   .skill-icon,

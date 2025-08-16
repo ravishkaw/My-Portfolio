@@ -14,9 +14,7 @@ const Hero = () => {
           <h1 className="hero-title">
             I am <span className="hero-stroke-text">Ravishka</span>
           </h1>
-          <p className="hero-info">
-            Innovating with Code, One Line at a Time
-          </p>
+          <p className="hero-info">Innovating with Code, One Line at a Time</p>
         </header>
 
         <div className="hero-desc">
@@ -47,7 +45,10 @@ const Hero = () => {
             className="btn btn-hero btn-hero-resume"
             aria-label="Resume Button"
           >
-            <a href="https://www.github.com/ravishkaw" target="_blank">
+            <a
+              href="https://drive.google.com/file/d/1jqEQHY9Y8Mdcep-pp0P9Dv8-9BtZ2p56/view"
+              target="_blank"
+            >
               Resume{" "}
               <span className="resume-download-icon">
                 <FaDownload />

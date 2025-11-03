@@ -46,7 +46,7 @@ const Hero = () => {
             aria-label="Resume Button"
           >
             <a
-              href="https://drive.google.com/file/d/1jqEQHY9Y8Mdcep-pp0P9Dv8-9BtZ2p56/view"
+              href="https://drive.google.com/file/d/1iw27BXIuom_5H1RBqT6ZbKy8leJcN6g2/view"
               target="_blank"
             >
               Resume{" "}

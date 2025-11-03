@@ -15,15 +15,11 @@ const About = () => {
           <div className="about-container">
             <div className="about-info">
               <p>
-                Hello! I am currently a BIT undergraduate student at the
-                University of Colombo School of Computing. I am passionate about
-                software development, and I am constantly working on improving
-                my skills. I am a self-starter and take a proactive approach to
-                learning, often teaching myself new programming languages and
-                technologies in my free time. I am committed to always giving my
-                best effort. I am excited to continue learning and growing as a
-                programmer, and I am looking forward to seeing where my career
-                in the field will take me.
+                Hello! I am an Associate Software Engineer at Pristine Solutions (Pvt) Ltd and a BIT undergraduate student at the University of Colombo School of Computing (UCSC).
+                
+                I am passionate about building scalable, high-quality software and continuously improving my technical and problem-solving skills. As a self-starter, I enjoy exploring new technologies, frameworks, and tools — often teaching myself in my free time.
+
+I believe in delivering my best in every project I take on, collaborating with teams effectively, and staying curious about the ever-evolving tech world. My goal is to keep growing as a developer and contribute to impactful projects that solve real-world problems.
               </p>
             </div>
           </div>

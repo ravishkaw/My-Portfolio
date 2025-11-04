@@ -13,7 +13,8 @@ const Navbar = () => {
       <ul className="nav-links">
         {navLinks.map((link) => {
           const { id, name, url, icon } = link;
-          const isHashLink = url.includes("#");
+          const isHashLink = url.includes("#") && url !== "/";
+          const isHome = url === "/";
 
           return (
             <li key={id}>
@@ -23,7 +24,11 @@ const Navbar = () => {
                   <span className="nav-title">{name}</span>
                 </HashLink>
               ) : (
-                <Link to={url} className="nav-link" onClick={handleHomeClick}>
+                <Link
+                  to={url}
+                  className="nav-link"
+                  onClick={isHome ? handleHomeClick : undefined}
+                >
                   <span className="nav-icon">{icon}</span>
                   <span className="nav-title">{name}</span>
                 </Link>

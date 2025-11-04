@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -13,7 +13,7 @@ import Achievements from "./pages/Achievements/Achievements";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <main>
         <div className="main-container">
@@ -35,7 +35,7 @@ const App = () => {
         </div>
       </main>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

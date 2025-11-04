@@ -1,4 +1,5 @@
 import { Typewriter } from "react-simple-typewriter";
+import { HashLink } from "react-router-hash-link";
 import "./Hero.css";
 // import programmerImg from "../../assets/Programmer.svg";
 import programmerImg from "../../assets/myImg.png";
@@ -39,7 +40,9 @@ const Hero = () => {
             className="btn btn-hero btn-hero-contact"
             aria-label="Contact Me Button"
           >
-            <a href="#about">Contact Me</a>
+            <HashLink smooth to="/#about">
+              Contact Me
+            </HashLink>
           </button>
           <button
             className="btn btn-hero btn-hero-resume"

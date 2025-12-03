@@ -15,9 +15,9 @@ const About = () => {
           <div className="about-container">
             <div className="about-info">
               <p>
-                Hello! I am an Associate Software Engineer at Pristine Solutions (Pvt) Ltd and a BIT undergraduate student at the University of Colombo School of Computing (UCSC).
+                Hello! I am an Associate Software Engineer at Pristine Solutions (Pvt) Ltd and a BIT graduate at the University of Colombo School of Computing (UCSC).
                 
-                I am passionate about building scalable, high-quality software and continuously improving my technical and problem-solving skills. As a self-starter, I enjoy exploring new technologies, frameworks, and tools — often teaching myself in my free time.
+                I am passionate about building scalable, high-quality software and continuously improving my technical and problem-solving skills. As a self-starter, I enjoy exploring new technologies, frameworks, and tools - often teaching myself in my free time.
 
 I believe in delivering my best in every project I take on, collaborating with teams effectively, and staying curious about the ever-evolving tech world. My goal is to keep growing as a developer and contribute to impactful projects that solve real-world problems.
               </p>

@@ -33,7 +33,7 @@ const Achievements = () => {
           <p className="section-eyebrow">Milestones</p>
           <h1 className="section-title">Achievements</h1>
           <p className="section-subtitle">
-            Degrees, certifications and roles, most recent first.
+            Degrees, certifications and roles.
           </p>
         </div>
 

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { HiMenuAlt4, HiX, HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
 
 import { navLinks, profile } from "../../data";
+import SectionLink from "../SectionLink";
 import useTheme from "../../hooks/useTheme";
 import useActiveSection from "../../hooks/useActiveSection";
 import "./Navbar.css";
@@ -35,15 +36,6 @@ const Navbar = () => {
 
   const isActive = (section) => pathname === "/" && section === activeSection;
 
-  // Navigating to the location you are already on is a no-op for the router,
-  // so "Home" has to scroll back up itself.
-  const handleClick = (url) => {
-    if (url === "/" && pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    setOpen(false);
-  };
-
   return (
     <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <a href="#content" className="skip-link">
@@ -58,18 +50,18 @@ const Navbar = () => {
 
         <nav className={`nav ${open ? "nav-open" : ""}`} aria-label="Main">
           <ul className="nav-links">
-            {navLinks.map(({ id, name, url, section }) => (
+            {navLinks.map(({ id, name, section }) => (
               <li key={id}>
-                <Link
-                  to={url}
+                <SectionLink
+                  section={section}
                   className={`nav-link ${
                     isActive(section) ? "nav-link-active" : ""
                   }`}
                   aria-current={isActive(section) ? "page" : undefined}
-                  onClick={() => handleClick(url)}
+                  onNavigate={() => setOpen(false)}
                 >
                   {name}
-                </Link>
+                </SectionLink>
               </li>
             ))}
           </ul>

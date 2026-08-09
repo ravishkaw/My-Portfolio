@@ -17,14 +17,21 @@ const MAX_ATTEMPTS = 40;
  * a behavior of "auto" defers to the stylesheet and animates instead.
  */
 const ScrollManager = () => {
-  const { pathname, hash, key } = useLocation();
+  const { pathname, hash, key, state } = useLocation();
   const previousPath = useRef(pathname);
 
   useEffect(() => {
     const cameFromAnotherRoute = previousPath.current !== pathname;
     previousPath.current = pathname;
 
-    if (!hash) {
+    // A section handed over by SectionLink when arriving from another route.
+    // It travels in router state rather than the URL so the address bar stays
+    // clean; the fragment below still works for links opened from outside.
+    const target = state?.scrollTo
+      ? `#${state.scrollTo}`
+      : hash || null;
+
+    if (!target || target === "#home") {
       window.scrollTo({ top: 0, behavior: "instant" });
       return;
     }
@@ -36,15 +43,15 @@ const ScrollManager = () => {
     let attempts = 0;
 
     const scrollToTarget = () => {
-      let target = null;
+      let element = null;
       try {
-        target = document.querySelector(hash);
+        element = document.querySelector(target);
       } catch {
-        // A malformed hash is not a valid selector — treat it as no target.
+        // A malformed fragment is not a valid selector - treat it as no target.
       }
 
-      if (target) {
-        target.scrollIntoView({
+      if (element) {
+        element.scrollIntoView({
           behavior: cameFromAnotherRoute ? "instant" : "smooth",
           block: "start",
         });
@@ -61,7 +68,7 @@ const ScrollManager = () => {
 
     scrollToTarget();
     return () => clearTimeout(timer);
-  }, [pathname, hash, key]);
+  }, [pathname, hash, key, state]);
 
   return null;
 };

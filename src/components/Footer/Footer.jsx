@@ -4,6 +4,7 @@ import { HiArrowUp } from "react-icons/hi";
 // import { useState } from "react";
 
 import { navLinks, profile, socialLinks } from "../../data";
+import SectionLink from "../SectionLink";
 import "./Footer.css";
 
 const Footer = () => {
@@ -40,9 +41,9 @@ const Footer = () => {
           <nav className="footer-col" aria-label="Footer">
             <h2 className="footer-heading">Explore</h2>
             <ul>
-              {navLinks.map(({ id, name, url }) => (
+              {navLinks.map(({ id, name, section }) => (
                 <li key={id}>
-                  <Link to={url}>{name}</Link>
+                  <SectionLink section={section}>{name}</SectionLink>
                 </li>
               ))}
             </ul>

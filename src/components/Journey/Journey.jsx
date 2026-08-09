@@ -16,7 +16,7 @@ const Journey = () => {
           <p className="section-eyebrow">Journey</p>
           <h2 className="section-title">Experience &amp; education</h2>
           <p className="section-subtitle">
-            The milestones that got me here - most recent first.
+            The milestones that got me here.
           </p>
         </div>
 

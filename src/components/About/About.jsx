@@ -1,5 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import SectionLink from "../SectionLink";
 
 import { highlights, profile } from "../../data";
 import "./About.css";
@@ -38,9 +38,9 @@ const About = () => {
               projects that solve real problems for real people.
             </p>
 
-            <Link to="/#contact" className="btn btn-ghost about-cta">
+            <SectionLink section="contact" className="btn btn-ghost about-cta">
               Get in touch <FaArrowRight />
-            </Link>
+            </SectionLink>
           </div>
 
           <div className="about-highlights">

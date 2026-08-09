@@ -1,5 +1,5 @@
 import { Typewriter } from "react-simple-typewriter";
-import { Link } from "react-router-dom";
+import SectionLink from "../SectionLink";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
 import { HiOutlineChevronDown } from "react-icons/hi";
 
@@ -46,9 +46,9 @@ const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <Link to="/#projects" className="btn btn-primary">
+            <SectionLink section="projects" className="btn btn-primary">
               View my work <FaArrowRight />
-            </Link>
+            </SectionLink>
             <a
               href={profile.resumeUrl}
               target="_blank"
@@ -96,9 +96,13 @@ const Hero = () => {
         </div>
       </div>
 
-      <Link to="/#about" className="hero-scroll" aria-label="Scroll to about">
+      <SectionLink
+        section="about"
+        className="hero-scroll"
+        aria-label="Scroll to about"
+      >
         <HiOutlineChevronDown />
-      </Link>
+      </SectionLink>
     </section>
   );
 };

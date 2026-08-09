@@ -14,7 +14,12 @@ import {
   FaHtml5,
   FaCss3Alt,
 } from "react-icons/fa";
-import { MdEmail, MdPhoneAndroid, MdWhatsapp, MdLocationOn } from "react-icons/md";
+import {
+  MdEmail,
+  MdPhoneAndroid,
+  MdWhatsapp,
+  MdLocationOn,
+} from "react-icons/md";
 import {
   SiExpress,
   SiJavascript,
@@ -229,16 +234,16 @@ export const socialLinks = [
     url: "https://www.github.com/ravishkaw",
     icon: <FaGithub />,
   },
-  {
-    id: 3,
-    name: "Facebook",
-    url: "https://www.facebook.com/ravishka.wijerathne",
-    icon: <FaFacebook />,
-  },
-  {
-    id: 4,
-    name: "Instagram",
-    url: "https://www.instagram.com/ravishka_wijerathne",
-    icon: <FaInstagram />,
-  },
+  // {
+  //   id: 3,
+  //   name: "Facebook",
+  //   url: "https://www.facebook.com/ravishka.wijerathne",
+  //   icon: <FaFacebook />,
+  // },
+  // {
+  //   id: 4,
+  //   name: "Instagram",
+  //   url: "https://www.instagram.com/ravishka_wijerathne",
+  //   icon: <FaInstagram />,
+  // },
 ];

@@ -1,49 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ravishka Wijerathne</title>
+    <title>Ravishka Wijerathne - Software Engineer</title>
+    <meta name="theme-color" content="#fbfbfd" />
 
-    <meta name="google-site-verification" content="bovnXIj4SS7_po3s9NJJFNfIe6Tv3bovPopbu54Vc1A" />
+    <meta
+      name="google-site-verification"
+      content="bovnXIj4SS7_po3s9NJJFNfIe6Tv3bovPopbu54Vc1A"
+    />
+
     <!-- Basic Meta Tags -->
     <meta
       name="description"
-      content="Welcome to Ravishka's portfolio! Explore my projects, skills, and achievements."
+      content="Ravishka Wijerathne - Software Engineer and BIT graduate (UCSC) based in Colombo, Sri Lanka. Building software across the stack with Java, Spring Boot, React and SQL."
     />
     <meta
       name="keywords"
-      content="Ravishka, Portfolio, Web Developer, Projects, Achievements, Skills"
+      content="Ravishka Wijerathne, Software Engineer, Portfolio, Java, Spring Boot, React, Sri Lanka, UCSC"
     />
     <meta name="author" content="Ravishka Wijerathne" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://ravishka.me/" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/og-image.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Ravishka's Portfolio" />
+    <meta property="og:site_name" content="Ravishka Wijerathne" />
+    <meta property="og:title" content="Ravishka Wijerathne - Software Engineer" />
     <meta
       property="og:description"
-      content="Discover my work, projects, and achievements. Let's connect!"
+      content="Software engineer based in Colombo, Sri Lanka. Explore my projects, experience and skills."
     />
-    <meta property="og:url" content="https://ravishka.netlify.app/" />
+    <meta property="og:url" content="https://ravishka.me/" />
     <meta property="og:type" content="website" />
-    <!-- <meta
-      property="og:image"
-      content="https://ravishka.netlify.app/preview-image.jpg"
-    /> -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://ravishka.me/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Ravishka Wijerathne, Software Engineer - ravishka.me"
+    />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ravishka's Portfolio" />
+    <meta name="twitter:title" content="Ravishka Wijerathne - Software Engineer" />
     <meta
       name="twitter:description"
-      content="Explore my projects, skills, and professional journey."
+      content="Software engineer based in Colombo, Sri Lanka. Explore my projects, experience and skills."
     />
-    <!-- <meta
-      name="twitter:image"
-      content="https://ravishka.netlify.app/preview-image.jpg"
-    /> -->
-    <script type="module" crossorigin src="/assets/index-7JxzjeAF.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DCVpEo4k.css">
+    <meta name="twitter:image" content="https://ravishka.me/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Ravishka Wijerathne, Software Engineer - ravishka.me"
+    />
+
+    <!-- Structured data: tells search engines who this site is about -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ravishka Wijerathne",
+        "url": "https://ravishka.me/",
+        "image": "https://ravishka.me/og-image.png",
+        "jobTitle": "Associate Software Engineer",
+        "email": "mailto:ravishkawj@gmail.com",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Pristine Solutions (Pvt) Ltd"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Colombo School of Computing"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Colombo",
+          "addressCountry": "LK"
+        },
+        "knowsAbout": [
+          "Software Engineering",
+          "Java",
+          "Spring Boot",
+          "JavaScript",
+          "React",
+          "SQL"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/ravishka-wijerathne",
+          "https://www.github.com/ravishkaw"
+        ]
+      }
+    </script>
+
+    <script>
+      // Restore the deep link stashed by 404.html (GitHub Pages SPA fallback).
+      (function () {
+        try {
+          var redirect = sessionStorage.redirect;
+          if (redirect) {
+            delete sessionStorage.redirect;
+            var target = new URL(redirect);
+            if (
+              target.origin === location.origin &&
+              target.pathname !== location.pathname
+            ) {
+              history.replaceState(
+                null,
+                "",
+                target.pathname + target.search + target.hash
+              );
+            }
+          }
+        } catch (e) {}
+      })();
+
+      // Apply the saved theme before first paint so there is no flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme = stored === "dark" ? "dark" : "light";
+          document.documentElement.dataset.theme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.content = theme === "dark" ? "#08080c" : "#fbfbfd";
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BwzQJX6D.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B4bQd4ti.css">
   </head>
   <body>
     <div id="root"></div>

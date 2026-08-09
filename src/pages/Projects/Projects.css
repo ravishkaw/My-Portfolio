@@ -1,52 +1,19 @@
-.projects {
-  padding: 5rem 0;
+.page-section {
+  padding-top: 8rem;
+  min-height: 100vh;
 }
 
-.project {
-  border: 2px solid white;
-  display: block;
-  border-radius: 0.35rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease-in-out all;
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  transition: color var(--transition), transform var(--transition);
 }
 
-.project:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.project .img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  height: 15rem;
-  border-top-right-radius: 0.25rem;
-  border-top-left-radius: 0.25rem;
-}
-
-.projects-center {
-  width: 90vw;
-  max-width: 1120px;
-  margin: 3rem auto 0 auto;
-  display: grid;
-  gap: 2rem;
-}
-
-.projects-center a h5 {
-  padding: 0.35rem;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .projects-center {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 992px) {
-  .projects-center {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.back-link:hover {
+  color: var(--accent-2);
+  transform: translateX(-3px);
 }

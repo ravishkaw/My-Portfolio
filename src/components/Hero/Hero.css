@@ -1,125 +1,296 @@
-.hero-section {
-  display: grid;
-}
-
-.hero-left-column {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  gap: 0.8rem;
-  margin-bottom: 4rem;
-}
-
-.hero-intro,
-.hero-desc {
-  text-align: center;
-}
-
-.hero-intro {
-  align-self: self-end;
-}
-
-.hero-up-title {
-  color: var(--primary-color-300);
-  font-size: 2rem;
-  margin: 0.2rem;
-}
-
-.hero-title {
-  font-size: 3rem;
-  margin: 0.2rem;
-}
-
-.hero-stroke-text {
-  color: var(--primary-black);
-  -webkit-text-stroke: 1.5px white;
-  text-shadow: 0 0 2px white, 0 0 4px white;
-}
-
-.hero-info {
-  margin: 0.4rem;
-  color: var(--primary-color-400);
-}
-
-.hero-btn-container {
-  text-align: center;
-}
-
-.btn.btn-hero {
-  color: var(--primary-white);
-  border-radius: 2rem;
-  padding: 0.5rem 0.75rem;
-  margin-right: 0.5rem;
-  font-size: 1rem;
-  display: inline-flex;
+.hero {
+  position: relative;
+  /* Exactly one viewport tall on desktop, navbar included. */
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
   align-items: center;
-  border: 1px solid var(--neon-purple);
+  padding-top: 72px;
+  padding-bottom: 0;
 }
 
-.btn.btn-hero-resume {
-  border: 1px solid var(--neon-purple);
-  background-color: #a24cf2;
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 4rem;
 }
 
-.resume-download-icon {
-  margin-left: 0.3rem;
-  font-size: 0.75rem;
+/* ---- Copy ---- */
+.hero-title {
+  font-size: clamp(2.3rem, 5.5vw, 3.9rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
-.btn.btn-hero-contact:hover {
-  background-color: #a24cf2;
+.hero-role {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 0.9rem;
 }
 
-.btn.btn-hero-resume:hover {
-  background-color: var(--neon-pink);
-  border: 1px solid var(--neon-pink);
+.hero-role-company {
+  color: var(--accent-2);
 }
 
 .hero-desc {
-  font-size: 1.2rem;
-  align-self: center;
+  color: var(--text-muted);
+  max-width: 54ch;
+  margin-bottom: 1.25rem;
 }
 
-.typewriter-text {
-  color: #a24cf2;
+.hero-typer {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
 }
 
-.hero-right-column {
-  display: none;
-  justify-content: flex-start;
-  align-content: center;
-  margin-bottom: 4rem;
+.hero-typer-prompt {
+  color: var(--accent);
+  margin-right: 0.35rem;
+  text-shadow: var(--neon-text);
 }
 
-.hero-img {
-  border-radius: 50%;
+.hero-typer-word {
+  color: var(--text);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.hero-socials a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.hero-socials a:hover {
+  color: var(--accent-text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-3px);
+}
+
+/* ---- Visual ---- */
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.hero-portrait-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 360px;
   width: 100%;
-  max-width: 400px;
+  margin-inline: auto;
+  border-radius: 28px;
+  padding: 4px;
+  background: var(--gradient);
+  animation: float 6s ease-in-out infinite;
 }
 
-@media screen and (min-width: 768px) {
-  .hero-section {
-    grid-template-columns: 2fr 1fr;
+@keyframes float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow-1), transparent 65%);
+  filter: blur(28px);
+  z-index: -1;
+}
+
+.hero-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  background: var(--bg-soft);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.hero-stat {
+  text-align: center;
+  padding: 0.9rem 0.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.hero-stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  line-height: 1.35;
+  display: block;
+}
+
+/* ---- Scroll cue ---- */
+.hero-scroll {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: var(--text-dim);
+  animation: bob 2.2s ease-in-out infinite;
+}
+
+.hero-scroll:hover {
+  color: var(--accent);
+}
+
+@keyframes bob {
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+/* Tablet: stack, keep the portrait but shrink it. The height is released
+   here - a stacked hero is taller than one viewport. */
+@media screen and (max-width: 940px) {
+  .hero {
+    height: auto;
+    min-height: 0;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
   }
 
-  .hero-right-column {
-    display: block;
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  .hero-intro,
-  .hero-desc {
-    justify-self: unset;
-    text-align: unset;
+  .hero-visual {
+    order: -1;
   }
 
-  .hero-desc {
-    justify-self: flex-start;
+  .hero-portrait-wrap {
+    max-width: 250px;
+  }
+
+  .hero-stats {
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+/* Mobile: centred copy only - the portrait and stats are dropped so the
+   headline and calls to action are what land above the fold. */
+@media screen and (max-width: 768px) {
+  .hero {
+    /* svh is the small viewport height: it ignores the collapsing browser
+       toolbar, so the hero does not resize as the user scrolls. min-height
+       rather than height so a short phone scrolls instead of clipping. */
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-top: 6rem;
+    padding-bottom: 4.5rem;
+    text-align: center;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    justify-items: center;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-title {
-    font-size: 5rem;
+    font-size: clamp(2.1rem, 9vw, 2.9rem);
   }
 
-  .hero-btn-container {
-    text-align: unset;
+  .hero-desc {
+    max-width: 42ch;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+
+  /* Tighter vertical rhythm so the whole hero fits one screen */
+  .hero-role {
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-desc {
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-typer {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-actions {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Bring the scroll cue back - it was dropped for the tablet layout */
+  .hero-scroll {
+    display: block;
+    bottom: 1.25rem;
   }
 }

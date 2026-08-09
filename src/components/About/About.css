@@ -1,83 +1,84 @@
-#about {
-  min-height: 70vh !important;
-}
-.about-contact-container {
+.about-grid {
   display: grid;
-  align-items: center;
-  justify-items: center;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 3rem;
+  align-items: start;
 }
 
-.about-img-container {
-  display: none;
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 1.1rem;
 }
 
-.about-img {
-  width: 100%;
-  max-width: 500px;
+.about-text p:first-child {
+  color: var(--text);
+  font-size: 1.05rem;
 }
 
-.about-right-column {
-  display: grid;
-  gap: 2rem;
+.about-cta {
+  margin-top: 0.75rem;
 }
 
-.about-info {
-  margin-top: 1rem;
-  text-align: center;
-  color: var(--primary-color-300);
-}
-
-.contact-container {
-  text-align: center;
+.about-highlights {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.contact-container h2 {
-  margin: 1rem 0;
-}
-
-.contact-details {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0.25rem 0;
-  color: var(--primary-color-300);
-  text-align: center;
-}
-
-.about-socials {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
-  font-size: 1.5rem;
 }
 
-.contact-details:hover,
-.about-socials a:hover {
-  color: var(--neon-purple);
+.highlight-card {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1.35rem;
 }
 
-@media screen and (min-width: 768px) {
-  .about-contact-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.highlight-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+}
 
-  .about-img-container {
-    display: block;
-  }
+.highlight-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-  .about-right-column {
-    grid-template-rows: auto;
-  }
+.highlight-title {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
 
-  .about-info {
-    text-align: unset;
-  }
+.highlight-period {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-2);
+  white-space: nowrap;
+}
 
-  .contact-container {
-    align-items: start;
+.highlight-org {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.highlight-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }

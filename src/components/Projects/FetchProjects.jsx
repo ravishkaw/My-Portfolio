@@ -9,32 +9,44 @@ const client = createClient({
 
 const useFetchProjects = (type) => {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [projects, setProjects] = useState([]);
 
-  const getData = async () => {
-    try {
-      const response = await client.getEntries({
-        content_type: type,
-      });
-      const projects = response.items.map((data) => {
-        const { title, url, image } = data.fields;
-        const id = data.sys.id;
-        const img = image?.fields?.file?.url;
-        return { id, title, url, img };
-      });
-      setProjects(projects);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    getData();
-  }, []);
+    let active = true;
 
-  return { loading, projects };
+    const getData = async () => {
+      try {
+        const response = await client.getEntries({ content_type: type });
+        if (!active) return;
+
+        setProjects(
+          response.items.map((data) => {
+            const { title, url, image, description, tags } = data.fields;
+            return {
+              id: data.sys.id,
+              title,
+              url,
+              description,
+              tags: Array.isArray(tags) ? tags : [],
+              img: image?.fields?.file?.url,
+            };
+          })
+        );
+      } catch (err) {
+        if (active) setError(err);
+      } finally {
+        if (active) setLoading(false);
+      }
+    };
+
+    getData();
+    return () => {
+      active = false;
+    };
+  }, [type]);
+
+  return { loading, error, projects };
 };
 
 export default useFetchProjects;

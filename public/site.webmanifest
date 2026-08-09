@@ -1,0 +1,22 @@
+{
+  "name": "Ravishka Wijerathne - Software Engineer",
+  "short_name": "Ravishka",
+  "description": "Portfolio of Ravishka Wijerathne, software engineer based in Colombo, Sri Lanka.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfbfd",
+  "theme_color": "#fbfbfd",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ]
+}

@@ -66,6 +66,11 @@
   font-size: 1.05rem;
 }
 
+.brand-logo{
+  height: 34px;
+  width: auto;
+}
+
 /* Nav */
 .nav {
   display: flex;

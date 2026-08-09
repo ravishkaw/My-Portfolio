@@ -37,6 +37,7 @@
 /* ---- Identity column ---- */
 .footer-logo {
   margin-bottom: 1rem;
+  width: 256px;
 }
 
 .footer-blurb {

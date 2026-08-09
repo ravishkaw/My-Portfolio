@@ -7,6 +7,7 @@ import SectionLink from "../SectionLink";
 import useTheme from "../../hooks/useTheme";
 import useActiveSection from "../../hooks/useActiveSection";
 import "./Navbar.css";
+import logo from "../../assets/logo.png"
 
 const sectionIds = navLinks.map((link) => link.section).filter(Boolean);
 
@@ -44,8 +45,9 @@ const Navbar = () => {
 
       <div className="container navbar-inner">
         <Link to="/" className="brand">
-          <span className="brand-mark">RW</span>
-          <span className="brand-name">{profile.name.split(" ")[0]}</span>
+          {/* <span className="brand-mark">RW</span>
+          <span className="brand-name">{profile.name.split(" ")[0]}</span> */}
+          <img src={logo} alt="Logo" className="brand-logo" />
         </Link>
 
         <nav className={`nav ${open ? "nav-open" : ""}`} aria-label="Main">

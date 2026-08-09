@@ -6,6 +6,7 @@ import { HiArrowUp } from "react-icons/hi";
 import { navLinks, profile, socialLinks } from "../../data";
 import SectionLink from "../SectionLink";
 import "./Footer.css";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   //  const [copied, setCopied] = useState(false);
@@ -28,7 +29,7 @@ const Footer = () => {
           {/* Identity */}
           <div className="footer-about">
             <Link to="/" className="brand footer-logo">
-              <span className="brand-mark">RW</span>
+              <img src={logo} alt="Logo" className="brand-logo" />
               <span className="brand-name">{profile.name}</span>
             </Link>
             <p className="footer-blurb">

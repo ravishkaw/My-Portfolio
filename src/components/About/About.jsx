@@ -11,52 +11,74 @@ const About = () => {
         <div className="section-head reveal">
           <p className="section-eyebrow">About me</p>
           <h2 className="section-title">
-            Engineer by trade, <span className="gradient-text">learner</span> by
-            habit.
+            Engineer by trade,{" "}
+            <span className="gradient-text">problem solver</span> at heart.
           </h2>
+          <p className="section-subtitle">
+            Building modern web applications and enterprise integrations.
+          </p>
         </div>
 
         <div className="about-grid">
           <div className="about-text reveal">
-            <p>
-              I&apos;m {profile.name}, an {profile.role} at {profile.company}{" "}
-              and a BIT graduate of the University of Colombo School of
-              Computing. I completed my degree in August 2025.
-            </p>
-            <p>
-              I enjoy the whole span of building software - modelling the data,
-              designing the API, reasoning about how the pieces fit together,
-              and then making the interface on top feel fast and obvious. I&apos;m
-              not tied to one layer or one language; the interesting part is the
-              problem. Most of what I know outside the classroom came from
-              building things and reading other people&apos;s code.
-            </p>
-            <p>
-              I&apos;m a self-starter: I pick up new frameworks and tools in my
-              own time, and I&apos;d rather understand why something works than
-              copy it. My goal is to keep growing as a developer and work on
-              projects that solve real problems for real people.
+            <p className="about-lead">
+              I&apos;m <strong>{profile.name}</strong>, a{" "}
+              <strong>{profile.role}</strong> at <strong>{profile.company}</strong>{" "}
+              and a BIT graduate of the{" "}
+              <strong>University of Colombo School of Computing (UCSC)</strong>.
             </p>
 
-            <SectionLink section="contact" className="btn btn-ghost about-cta">
-              Get in touch <FaArrowRight />
-            </SectionLink>
+            <p>
+              As a Software Engineer, I work across the whole application lifecycle.
+              I enjoy taking projects from concept to deployment—designing the
+              data layer, building clean APIs, and crafting intuitive, responsive
+              user interfaces on top.
+            </p>
+
+            <p>
+              My hands-on experience includes developing SAP Business One Service
+              Layer integration packages, creating custom SAP Customer Checkout
+              (CCO) plugins (such as batch item splitting and receipt
+              recalculations), and building modern web applications with
+              TypeScript, React, NestJS, and Node.js.
+            </p>
+
+            <p>
+              I thrive on continuous learning and writing code that is clean,
+              maintainable, and reliable in production.
+            </p>
+
+            <div className="about-cta-group">
+              <SectionLink section="journey" className="btn btn-primary">
+                View my journey <FaArrowRight />
+              </SectionLink>
+              <SectionLink section="contact" className="btn btn-ghost">
+                Get in touch
+              </SectionLink>
+            </div>
           </div>
 
           <div className="about-highlights">
-            {highlights.map(({ id, title, org, period, description, icon }) => (
-              <article key={id} className="card highlight-card reveal">
-                <div className="highlight-icon">{icon}</div>
-                <div>
-                  <div className="highlight-top">
-                    <h3 className="highlight-title">{title}</h3>
-                    <span className="highlight-period">{period}</span>
+            {highlights.map(
+              ({ id, title, org, period, badge, description, icon }) => (
+                <article key={id} className="card highlight-card reveal">
+                  <div className="highlight-icon">{icon}</div>
+                  <div className="highlight-body">
+                    <div className="highlight-top">
+                      <h3 className="highlight-title">{title}</h3>
+                      <span className="highlight-period">{period}</span>
+                    </div>
+                    <div className="highlight-meta">
+                      <span className="highlight-org">{org}</span>
+                      {badge && (
+                        <span className="highlight-badge">{badge}</span>
+                      )}
+                    </div>
+                    <p className="highlight-desc">{description}</p>
                   </div>
-                  <p className="highlight-org">{org}</p>
-                  <p className="highlight-desc">{description}</p>
-                </div>
-              </article>
-            ))}
+                </article>
+              )
+            )}
           </div>
         </div>
       </div>

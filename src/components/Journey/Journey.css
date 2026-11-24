@@ -2,8 +2,42 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
   padding-left: 3.25rem;
+}
+
+/* Timeline filter tabs */
+.timeline-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.timeline-filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.timeline-filter-btn:hover {
+  color: var(--text);
+  border-color: var(--accent-border);
+  background: var(--surface-2);
+}
+
+.timeline-filter-btn.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(109, 40, 217, 0.2);
 }
 
 /* The vertical rail */
@@ -11,8 +45,8 @@
   content: "";
   position: absolute;
   left: 21px;
-  top: 8px;
-  bottom: 8px;
+  top: 12px;
+  bottom: 12px;
   width: 2px;
   background: linear-gradient(
     to bottom,
@@ -38,7 +72,7 @@
 .timeline-marker {
   position: absolute;
   left: -3.25rem;
-  top: 1.2rem;
+  top: 1.3rem;
   display: grid;
   place-items: center;
   width: 44px;
@@ -49,6 +83,12 @@
   background: var(--bg);
   border: 2px solid var(--accent);
   box-shadow: 0 0 0 6px var(--bg);
+  transition: transform var(--transition);
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4), 0 0 0 6px var(--bg);
 }
 
 .timeline-work .timeline-marker {
@@ -62,36 +102,110 @@
 }
 
 .timeline-card {
-  padding: 1.4rem 1.5rem;
+  padding: 1.5rem 1.65rem;
+  border-radius: var(--radius-lg);
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
 }
 
 .timeline-date {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-2);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-text);
+  white-space: nowrap;
 }
 
 .timeline-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .timeline-org {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-dim);
-  margin-bottom: 0.6rem;
 }
 
 .timeline-desc {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
 }
 
-@media screen and (max-width: 600px) {
+/* Bullet list */
+.timeline-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  padding-left: 0.25rem;
+}
+
+.timeline-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.timeline-bullet-icon {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--accent-2);
+}
+
+/* Tags */
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.timeline-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  transition: all var(--transition);
+}
+
+.timeline-tag:hover {
+  border-color: var(--accent-border);
+  color: var(--accent-text);
+}
+
+@media screen and (max-width: 640px) {
   .timeline {
     padding-left: 2.5rem;
   }
@@ -102,14 +216,18 @@
 
   .timeline-marker {
     left: -2.5rem;
-    top: 1rem;
+    top: 1.1rem;
     width: 34px;
     height: 34px;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     box-shadow: 0 0 0 4px var(--bg);
   }
 
   .timeline-card {
-    padding: 1.15rem 1.2rem;
+    padding: 1.25rem 1.2rem;
+  }
+
+  .timeline-title {
+    font-size: 1.05rem;
   }
 }

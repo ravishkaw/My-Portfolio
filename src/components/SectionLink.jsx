@@ -4,14 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 /**
  * Links to a section of the home page without writing a fragment into the URL.
  *
- * A normal click is intercepted and turned into a scroll, so browsing the
- * one-page content never fills the address bar (or the history) with
- * /#about, /#skills and so on. The href is still a real URL, so
- * middle-click, ctrl-click and "open in new tab" keep working - those load
- * the page fresh, where ScrollManager honours the fragment.
- *
- * From another route (/projects, /achievements) it navigates home first and
- * passes the target section through router state.
+ * Smoothly utilizes Lenis if active, falling back to window.scrollTo / scrollIntoView.
  */
 const SectionLink = ({ section, className, children, onNavigate, ...rest }) => {
   const navigate = useNavigate();
@@ -33,11 +26,21 @@ const SectionLink = ({ section, className, children, onNavigate, ...rest }) => {
     event.preventDefault();
 
     if (pathname === "/") {
-      const target = document.getElementById(section);
-      if (target && section !== "home") {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (section === "home") {
+        if (window.__lenis) {
+          window.__lenis.scrollTo(0, { duration: 1.15 });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
       } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        const target = document.getElementById(section);
+        if (target) {
+          if (window.__lenis) {
+            window.__lenis.scrollTo(target, { offset: -65, duration: 1.15 });
+          } else {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
       }
     } else {
       navigate("/", { state: { scrollTo: section } });

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { HiArrowUp } from "react-icons/hi";
-// import { FaRegCopy, FaCheck } from "react-icons/fa";
-// import { useState } from "react";
 
 import { navLinks, profile, socialLinks } from "../../data";
 import SectionLink from "../SectionLink";
@@ -9,18 +7,13 @@ import "./Footer.css";
 import logo from "../../assets/logo.png";
 
 const Footer = () => {
-  //  const [copied, setCopied] = useState(false);
-
-  //  const copyEmail = async () => {
-  //    try {
-  //      await navigator.clipboard.writeText(profile.email);
-  //      setCopied(true);
-  //      setTimeout(() => setCopied(false), 2000);
-  //    } catch {
-  //      window.location.href = `mailto:${profile.email}`;
-  //    }
-  //  };
-  const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const toTop = () => {
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { duration: 1.2 });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="footer">
@@ -33,8 +26,8 @@ const Footer = () => {
               <span className="brand-name">{profile.name}</span>
             </Link>
             <p className="footer-blurb">
-              {profile.role} at {profile.company}. Building software across the
-              stack from {profile.location}.
+              {profile.role} at {profile.company}. Architecting scalable backend
+              systems and robust enterprise integrations from {profile.location}.
             </p>
           </div>
 
@@ -57,7 +50,7 @@ const Footer = () => {
                 <Link to="/projects">All projects</Link>
               </li>
               <li>
-                <Link to="/achievements">Achievements</Link>
+                <Link to="/achievements">Achievements &amp; Career</Link>
               </li>
               <li>
                 <a
@@ -93,7 +86,7 @@ const Footer = () => {
             reserved.
           </p>
           <p className="footer-built">
-            Designed &amp; built with React, Claude and a lot of coffee.
+            Engineered with modern web architectures and precision.
           </p>
           <button type="button" className="footer-top" onClick={toTop}>
             Back to top <HiArrowUp />

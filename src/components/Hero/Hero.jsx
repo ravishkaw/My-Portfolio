@@ -1,7 +1,15 @@
 import { Typewriter } from "react-simple-typewriter";
 import SectionLink from "../SectionLink";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
-import { HiOutlineChevronDown } from "react-icons/hi";
+import { HiOutlineChevronDown, HiSparkles } from "react-icons/hi";
+import {
+  SiTypescript,
+  SiReact,
+  SiNestjs,
+  SiNodedotjs,
+  SiSap,
+  SiMongodb,
+} from "react-icons/si";
 
 import { profile, socialLinks, stats } from "../../data";
 import portrait from "../../assets/myImg.png";
@@ -12,9 +20,16 @@ const Hero = () => {
     <section className="section hero" id="home">
       <div className="container hero-inner">
         <div className="hero-copy">
+          <div className="hero-status-pill">
+            <span className="hero-status-pulse" />
+            <HiSparkles className="hero-status-icon" />
+            <span>Promoted to Software Engineer · Sep 2026</span>
+          </div>
+
           <h1 className="hero-title">
             Hi, I&apos;m <span className="gradient-text">Ravishka</span>.
-            <br />I build software that lasts.
+            <br />
+            Software Engineer.
           </h1>
 
           <p className="hero-role">
@@ -22,28 +37,28 @@ const Hero = () => {
             <span className="hero-role-company">{profile.company}</span>
           </p>
 
-          <p className="hero-desc">
-            {/* A software engineer based in {profile.location}.  */}
-            I work across the
-            stack. I care about
-            clean architecture, readable code and software that holds up in
-            production.
-          </p>
+          <p className="hero-desc">{profile.tagline}</p>
 
-          <p className="hero-typer">
-            <span className="hero-typer-prompt">$</span> Let&apos;s{" "}
+          <div className="hero-typer">
+            <span className="hero-typer-prompt">$</span>
+            <span className="hero-typer-cmd">focus:</span>
             <span className="hero-typer-word">
               <Typewriter
-                words={["create", "innovate", "ship", "build!"]}
+                words={[
+                  "build modern web applications",
+                  "integrate enterprise SAP ecosystems",
+                  "design high-performance APIs",
+                  "ship clean, reliable code",
+                ]}
                 loop={0}
                 cursor
                 cursorStyle="_"
-                typeSpeed={75}
-                deleteSpeed={45}
-                delaySpeed={1400}
+                typeSpeed={60}
+                deleteSpeed={35}
+                delaySpeed={1800}
               />
             </span>
-          </p>
+          </div>
 
           <div className="hero-actions">
             <SectionLink section="projects" className="btn btn-primary">
@@ -57,6 +72,30 @@ const Hero = () => {
             >
               Download resume <FaDownload />
             </a>
+          </div>
+
+          <div className="hero-stack-preview">
+            <span className="hero-stack-label">Stack:</span>
+            <div className="hero-stack-icons">
+              <span className="hero-stack-badge" title="TypeScript">
+                <SiTypescript /> TypeScript
+              </span>
+              <span className="hero-stack-badge" title="React">
+                <SiReact /> React
+              </span>
+              <span className="hero-stack-badge" title="NestJS">
+                <SiNestjs /> NestJS
+              </span>
+              <span className="hero-stack-badge" title="Node.js">
+                <SiNodedotjs /> Node.js
+              </span>
+              <span className="hero-stack-badge" title="SAP B1 / CCO">
+                <SiSap /> SAP ERP
+              </span>
+              <span className="hero-stack-badge" title="MongoDB">
+                <SiMongodb /> MongoDB
+              </span>
+            </div>
           </div>
 
           <ul className="hero-socials">

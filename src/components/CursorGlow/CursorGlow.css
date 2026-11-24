@@ -1,0 +1,32 @@
+.cursor-ambient-glow {
+  position: fixed;
+  top: -160px;
+  left: -160px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle closest-side,
+    var(--glow-1) 0%,
+    rgba(14, 116, 144, 0.08) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: screen;
+  filter: blur(28px);
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+[data-theme="light"] .cursor-ambient-glow {
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(109, 40, 217, 0.12) 0%,
+    rgba(14, 116, 144, 0.06) 60%,
+    transparent 100%
+  );
+}

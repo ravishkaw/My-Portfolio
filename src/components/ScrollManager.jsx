@@ -9,12 +9,8 @@ const MAX_ATTEMPTS = 40;
  *  - a location with a hash scrolls that section into view
  *  - any other navigation starts at the top of the page
  *
- * Arriving from another route jumps instantly (the section was never on
- * screen, so animating from the top is just a delay); moving between
- * sections of a page already in view scrolls smoothly.
- *
- * Note: "instant" is deliberate — with `scroll-behavior: smooth` set in CSS,
- * a behavior of "auto" defers to the stylesheet and animates instead.
+ * Integrates directly with Lenis smooth scroll when active,
+ * falling back cleanly to native browser scrolling.
  */
 const ScrollManager = () => {
   const { pathname, hash, key, state } = useLocation();
@@ -25,20 +21,19 @@ const ScrollManager = () => {
     previousPath.current = pathname;
 
     // A section handed over by SectionLink when arriving from another route.
-    // It travels in router state rather than the URL so the address bar stays
-    // clean; the fragment below still works for links opened from outside.
     const target = state?.scrollTo
       ? `#${state.scrollTo}`
       : hash || null;
 
     if (!target || target === "#home") {
-      window.scrollTo({ top: 0, behavior: "instant" });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: cameFromAnotherRoute, duration: 1.1 });
+      } else {
+        window.scrollTo({ top: 0, behavior: cameFromAnotherRoute ? "instant" : "smooth" });
+      }
       return;
     }
 
-    // The target may not be mounted yet when the route has just changed, so
-    // retry briefly. Timers are used rather than requestAnimationFrame, which
-    // is throttled in background tabs and would leave the scroll pending.
     let timer;
     let attempts = 0;
 
@@ -47,14 +42,22 @@ const ScrollManager = () => {
       try {
         element = document.querySelector(target);
       } catch {
-        // A malformed fragment is not a valid selector - treat it as no target.
+        // Malformed fragment is not a valid selector - treat as no target.
       }
 
       if (element) {
-        element.scrollIntoView({
-          behavior: cameFromAnotherRoute ? "instant" : "smooth",
-          block: "start",
-        });
+        if (window.__lenis) {
+          window.__lenis.scrollTo(element, {
+            offset: -65,
+            immediate: cameFromAnotherRoute,
+            duration: 1.15,
+          });
+        } else {
+          element.scrollIntoView({
+            behavior: cameFromAnotherRoute ? "instant" : "smooth",
+            block: "start",
+          });
+        }
         return;
       }
 
@@ -63,7 +66,11 @@ const ScrollManager = () => {
         return;
       }
 
-      window.scrollTo({ top: 0, behavior: "instant" });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }
     };
 
     scrollToTarget();

@@ -7,21 +7,24 @@ const Skills = () => {
       <div className="container">
         <div className="section-head reveal">
           <p className="section-eyebrow">Toolbox</p>
-          <h2 className="section-title">Skills &amp; technologies</h2>
+          <h2 className="section-title">Skills &amp; Technologies</h2>
           <p className="section-subtitle">
-            What I reach for when building - and what I&apos;m still sharpening.
+            Languages, frameworks, databases, and tools I use to build software.
           </p>
         </div>
 
         <div className="skills-grid">
-          {skillGroups.map(({ id, group, items }) => (
+          {skillGroups.map(({ id, group, domain, items }) => (
             <div key={id} className="card skill-group reveal">
-              <h3 className="skill-group-title">{group}</h3>
+              <div className="skill-group-head">
+                <span className="skill-domain-tag">{domain}</span>
+                <h3 className="skill-group-title">{group}</h3>
+              </div>
               <ul className="skill-list">
                 {items.map(({ name, icon }) => (
                   <li key={name} className="skill-chip">
                     <span className="skill-icon">{icon}</span>
-                    {name}
+                    <span className="skill-name">{name}</span>
                   </li>
                 ))}
               </ul>

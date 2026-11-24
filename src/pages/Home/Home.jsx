@@ -12,7 +12,7 @@ const Home = () => {
   usePageMeta({
     title: "Ravishka Wijerathne - Software Engineer",
     description:
-      "Software engineer based in Colombo, Sri Lanka. BIT graduate of UCSC, building software across the stack with Java, Spring Boot, JavaScript and SQL.",
+      "Software Engineer building modern web applications, APIs, and enterprise integrations. Experience across TypeScript, React, Node.js, NestJS, and SAP ERP systems.",
     path: "/",
   });
 

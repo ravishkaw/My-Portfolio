@@ -1,7 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
 import SectionLink from "../SectionLink";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
-import { HiOutlineChevronDown, HiSparkles } from "react-icons/hi";
+import { HiOutlineChevronDown } from "react-icons/hi";
 import {
   SiTypescript,
   SiReact,
@@ -20,11 +20,11 @@ const Hero = () => {
     <section className="section hero" id="home">
       <div className="container hero-inner">
         <div className="hero-copy">
-          <div className="hero-status-pill">
+          {/* <div className="hero-status-pill">
             <span className="hero-status-pulse" />
             <HiSparkles className="hero-status-icon" />
             <span>Promoted to Software Engineer · Sep 2026</span>
-          </div>
+          </div> */}
 
           <h1 className="hero-title">
             Hi, I&apos;m <span className="gradient-text">Ravishka</span>.

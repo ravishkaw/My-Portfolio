@@ -67,7 +67,7 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { id: 1, value: "SE", label: "Software Engineer @ Pristine" },
+  { id: 1, value: "SE", label: "Software Engineer @ Pristine Solutions" },
   { id: 2, value: "Full-Stack", label: "Web Apps & Integrations" },
   { id: 3, value: "BIT", label: "UCSC Graduate" },
 ];
@@ -100,7 +100,7 @@ export const highlights = [
     period: "Jan 2025 – Aug 2025",
     badge: "Internship",
     description:
-      "Contributed to multi-platform engineering deliverables—including travel applications, administrative portals, and desktop software.",
+      "Contributed to multi-platform engineering deliverables-including travel applications, administrative portals, and desktop software.",
     icon: <FaServer />,
   },
   {

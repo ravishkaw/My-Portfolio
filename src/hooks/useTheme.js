@@ -20,7 +20,7 @@ const useTheme = () => {
     try {
       localStorage.setItem(STORAGE_KEY, theme);
     } catch {
-      /* storage may be unavailable — the theme still applies for this visit */
+      /* storage may be unavailable - the theme still applies for this visit */
     }
   }, [theme]);
 

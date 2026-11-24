@@ -23,22 +23,22 @@ const About = () => {
           <div className="about-text reveal">
             <p className="about-lead">
               I&apos;m <strong>{profile.name}</strong>, a{" "}
-              <strong>{profile.role}</strong> at <strong>{profile.company}</strong>{" "}
-              and a BIT graduate of the{" "}
+              <strong>{profile.role}</strong> at{" "}
+              <strong>{profile.company}</strong> and a BIT graduate of the{" "}
               <strong>University of Colombo School of Computing (UCSC)</strong>.
             </p>
 
             <p>
-              As a Software Engineer, I work across the whole application lifecycle.
-              I enjoy taking projects from concept to deployment—designing the
-              data layer, building clean APIs, and crafting intuitive, responsive
-              user interfaces on top.
+              As a Software Engineer, I work across the whole application
+              lifecycle. I enjoy taking projects from concept to
+              deployment-designing the data layer, building clean APIs, and
+              crafting intuitive, responsive user interfaces on top.
             </p>
 
             <p>
-              My hands-on experience includes developing SAP Business One Service
-              Layer integration packages, creating custom SAP Customer Checkout
-              (CCO) plugins (such as batch item splitting and receipt
+              My hands-on experience includes developing SAP Business One
+              Service Layer integration packages, creating custom SAP Customer
+              Checkout (CCO) plugins (such as batch item splitting and receipt
               recalculations), and building modern web applications with
               TypeScript, React, NestJS, and Node.js.
             </p>
@@ -77,7 +77,7 @@ const About = () => {
                     <p className="highlight-desc">{description}</p>
                   </div>
                 </article>
-              )
+              ),
             )}
           </div>
         </div>

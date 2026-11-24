@@ -12,7 +12,7 @@ import AchievementsPage from "./pages/Achievements/Achievements";
 import NotFound from "./pages/NotFound/NotFound";
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
     <SmoothScroll />
     <ScrollProgressBar />
     <CursorGlow />

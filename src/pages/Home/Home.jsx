@@ -12,7 +12,7 @@ const Home = () => {
   usePageMeta({
     title: "Ravishka Wijerathne - Software Engineer",
     description:
-      "Software Engineer building modern web applications, APIs, and enterprise integrations. Experience across TypeScript, React, Node.js, NestJS, and SAP ERP systems.",
+      "Software Engineer building modern web applications, APIs, and enterprise integrations across JavaScript, TypeScript, React, Angular, Node.js, .NET, Java, MS SQL, SAP HANA, MongoDB, and SAP ERP.",
     path: "/",
   });
 

@@ -37,7 +37,6 @@
 /* ---- Identity column ---- */
 .footer-logo {
   margin-bottom: 1rem;
-  width: 256px;
 }
 
 .footer-blurb {
@@ -95,7 +94,9 @@
   gap: 0.55rem;
   font-size: 0.92rem;
   color: var(--text-muted);
-  transition: color var(--transition), transform var(--transition);
+  transition:
+    color var(--transition),
+    transform var(--transition);
 }
 
 .footer-col a:hover {

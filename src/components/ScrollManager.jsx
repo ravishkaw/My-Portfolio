@@ -21,15 +21,19 @@ const ScrollManager = () => {
     previousPath.current = pathname;
 
     // A section handed over by SectionLink when arriving from another route.
-    const target = state?.scrollTo
-      ? `#${state.scrollTo}`
-      : hash || null;
+    const target = state?.scrollTo ? `#${state.scrollTo}` : hash || null;
 
     if (!target || target === "#home") {
       if (window.__lenis) {
-        window.__lenis.scrollTo(0, { immediate: cameFromAnotherRoute, duration: 1.1 });
+        window.__lenis.scrollTo(0, {
+          immediate: cameFromAnotherRoute,
+          duration: 1.1,
+        });
       } else {
-        window.scrollTo({ top: 0, behavior: cameFromAnotherRoute ? "instant" : "smooth" });
+        window.scrollTo({
+          top: 0,
+          behavior: cameFromAnotherRoute ? "instant" : "smooth",
+        });
       }
       return;
     }
@@ -48,7 +52,7 @@ const ScrollManager = () => {
       if (element) {
         if (window.__lenis) {
           window.__lenis.scrollTo(element, {
-            offset: -65,
+            offset: -20,
             immediate: cameFromAnotherRoute,
             duration: 1.15,
           });

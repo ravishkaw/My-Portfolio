@@ -15,5 +15,7 @@
   background: var(--gradient);
   transform-origin: 0% 50%;
   transition: transform 60ms linear;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.7), 0 0 4px rgba(34, 211, 238, 0.9);
+  box-shadow:
+    0 0 10px rgba(139, 92, 246, 0.7),
+    0 0 4px rgba(34, 211, 238, 0.9);
 }

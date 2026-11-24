@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaArrowLeft, FaGithub } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 import useFetchProjects from "../../components/Projects/FetchProjects";
 import ProjectCard from "../../components/Projects/ProjectCard";
@@ -9,12 +9,12 @@ import "../../components/Projects/Projects.css";
 import "./Projects.css";
 
 const ProjectsPage = () => {
-  const { loading, error, projects } = useFetchProjects("projects");
+  const { loading, projects } = useFetchProjects("projects");
   useReveal([loading, projects.length]);
   usePageMeta({
     title: "Projects - Ravishka Wijerathne",
     description:
-      "A complete archive of software projects built by Ravishka Wijerathne, from full-stack applications to smaller experiments.",
+      "A complete archive of software projects built by Ravishka Wijerathne, from full-stack applications to enterprise integrations.",
     path: "/projects",
   });
 
@@ -27,31 +27,16 @@ const ProjectsPage = () => {
 
         <div className="section-head">
           <p className="section-eyebrow">Archive</p>
-          <h1 className="section-title">All projects</h1>
+          <h1 className="section-title">
+            All <span className="gradient-text">Projects</span>
+          </h1>
           <p className="section-subtitle">
-            Everything I&apos;ve built and published so far.
+            Everything I&apos;ve architected, built, and shipped so far.
           </p>
         </div>
 
         {loading ? (
           <div className="loading" />
-        ) : error || projects.length === 0 ? (
-          <div className="card projects-empty">
-            <p>
-              {error
-                ? "Projects couldn't be loaded right now."
-                : "No projects published yet."}{" "}
-              My code lives on GitHub in the meantime.
-            </p>
-            <a
-              href="https://www.github.com/ravishkaw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost"
-            >
-              <FaGithub /> View GitHub
-            </a>
-          </div>
         ) : (
           <div className="projects-grid">
             {projects.map((project) => (

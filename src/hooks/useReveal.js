@@ -1,18 +1,29 @@
 import { useEffect } from "react";
 
 /**
- * Adds `is-visible` to every `.reveal` element once it scrolls into view.
- * Runs once per mount; re-runs when `deps` change so late-loading content
- * (e.g. fetched projects) also gets observed.
+ * Adds `is-visible` to every `.reveal` element once it scrolls into view,
+ * with a clean, GPU-friendly stagger delay for sibling items.
+ * Zero continuous scroll or mousemove listeners so scrolling stays 60fps+ butter-smooth.
  */
 const useReveal = (deps = []) => {
   useEffect(() => {
+    const staggerGroups = document.querySelectorAll(
+      ".about-highlights, .about-focus-grid, .timeline, .skills-grid, .projects-grid, .contact-list"
+    );
+    staggerGroups.forEach((group) => {
+      Array.from(group.children).forEach((child, index) => {
+        child.style.setProperty(
+          "--reveal-delay",
+          `${Math.min(index * 70, 320)}ms`
+        );
+      });
+    });
+
     const nodes = document.querySelectorAll(".reveal:not(.is-visible)");
     if (!nodes.length) return;
 
     const showAll = () => nodes.forEach((n) => n.classList.add("is-visible"));
 
-    // Never let a missing/failing observer leave the page blank.
     if (typeof IntersectionObserver === "undefined") {
       showAll();
       return;
@@ -27,12 +38,11 @@ const useReveal = (deps = []) => {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -50px 0px" }
     );
 
     nodes.forEach((node) => observer.observe(node));
 
-    // Safety net: reveal anything still hidden after a few seconds.
     const fallback = setTimeout(showAll, 4000);
 
     return () => {

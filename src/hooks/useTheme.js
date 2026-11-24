@@ -15,7 +15,7 @@ const useTheme = () => {
     document.documentElement.dataset.theme = theme;
 
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.content = theme === "dark" ? "#08080c" : "#fbfbfd";
+    if (meta) meta.content = theme === "dark" ? "#06080f" : "#f8fafc";
 
     try {
       localStorage.setItem(STORAGE_KEY, theme);

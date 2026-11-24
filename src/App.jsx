@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ScrollManager from "./components/ScrollManager";
 import SmoothScroll from "./components/SmoothScroll";
-import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
+// import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
 import CursorGlow from "./components/CursorGlow/CursorGlow";
 import Home from "./pages/Home/Home";
 import ProjectsPage from "./pages/Projects/Projects";
@@ -14,7 +14,7 @@ import NotFound from "./pages/NotFound/NotFound";
 const App = () => (
   <BrowserRouter basename={import.meta.env.BASE_URL}>
     <SmoothScroll />
-    <ScrollProgressBar />
+    {/* <ScrollProgressBar /> */}
     <CursorGlow />
     <ScrollManager />
     <Navbar />

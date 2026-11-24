@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenuAlt4, HiX, HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 import { navLinks, profile } from "../../data";
 import SectionLink from "../SectionLink";
 import useTheme from "../../hooks/useTheme";
 import useActiveSection from "../../hooks/useActiveSection";
 import "./Navbar.css";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 
 const sectionIds = navLinks.map((link) => link.section).filter(Boolean);
 
@@ -19,7 +20,7 @@ const Navbar = () => {
   const activeSection = useActiveSection(sectionIds, pathname === "/");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 18);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -44,10 +45,12 @@ const Navbar = () => {
       </a>
 
       <div className="container navbar-inner">
-        <Link to="/" className="brand">
-          {/* <span className="brand-mark">RW</span>
-          <span className="brand-name">{profile.name.split(" ")[0]}</span> */}
-          <img src={logo} alt="Logo" className="brand-logo" />
+        <Link to="/" className="brand" aria-label={`${profile.name} Home`}>
+          <img src={logo} alt="RW Logo" className="brand-logo" />
+          <div className="brand-text">
+            <span className="brand-name">Ravishka</span>
+            <span className="brand-role">Software Engineer</span>
+          </div>
         </Link>
 
         <nav className={`nav ${open ? "nav-open" : ""}`} aria-label="Main">
@@ -74,7 +77,8 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="btn btn-primary nav-cta"
           >
-            Resume
+            <span>Resume</span>
+            <FaArrowUpRightFromSquare className="nav-cta-icon" />
           </a>
         </nav>
 

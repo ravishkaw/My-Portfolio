@@ -46,11 +46,11 @@ export const profile = {
   location: "Colombo, Sri Lanka",
   headline: "Software Engineer",
   tagline:
-    "Building scalable, high-performance web applications and enterprise integrations.",
+    "Building scalable web applications, reliable APIs, and enterprise integrations.",
   aboutIntro:
-    "I'm a Software Engineer with experience working across the stack to build modern web applications, APIs, and enterprise solutions.",
+    "I'm a Software Engineer working across the stack to build modern web applications, APIs, and enterprise solutions.",
   aboutBody:
-    "With a strong computer science foundation from UCSC and hands-on experience across modern web technologies and enterprise ecosystems (such as SAP Business One and SAP Customer Checkout), I focus on writing clean, reliable code and delivering solutions that solve real business problems.",
+    "With a computer science background from UOC and hands-on experience across modern web frameworks and enterprise platforms, I focus on writing clean, maintainable code that solves real problems.",
   resumeUrl:
     "https://drive.google.com/file/d/1iw27BXIuom_5H1RBqT6ZbKy8leJcN6g2/view",
   email: "ravishkawj@gmail.com",
@@ -67,9 +67,51 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { id: 1, value: "SE", label: "Software Engineer @ Pristine Solutions" },
-  { id: 2, value: "Full-Stack", label: "Web Apps & Integrations" },
-  { id: 3, value: "BIT", label: "UCSC Graduate" },
+  {
+    id: 1,
+    value: "2+ Yrs",
+    label: "Experience",
+  },
+  {
+    id: 2,
+    value: "Full-Stack",
+    label: "Web & Enterprise",
+  },
+  {
+    id: 3,
+    value: "BIT (UOC)",
+    label: "IT Graduate",
+  },
+];
+
+export const fallbackProjects = [
+  {
+    id: "fallback-1",
+    title: "Enterprise ERP Integration Service",
+    description:
+      "Backend integration service and REST API layer synchronizing business data and automated workflows between web applications and SAP Business One.",
+    url: "https://github.com/ravishkaw",
+    tags: ["TypeScript", "NestJS", "SAP Business One", "MongoDB"],
+    featured: true,
+  },
+  {
+    id: "fallback-2",
+    title: "Retail POS Extension Suite",
+    description:
+      "Custom plugin extensions and REST integrations built for SAP Customer Checkout to streamline retail point-of-sale workflows.",
+    url: "https://github.com/ravishkaw",
+    tags: ["Java", "SAP CCO", "REST APIs", "SQL"],
+    featured: true,
+  },
+  {
+    id: "fallback-3",
+    title: "Operations & Booking Web Portal",
+    description:
+      "Full-stack web application featuring role-based access, booking management, and administrative dashboards.",
+    url: "https://github.com/ravishkaw",
+    tags: ["React", "Node.js", "Express", "PostgreSQL"],
+    featured: true,
+  },
 ];
 
 export const highlights = [
@@ -80,7 +122,7 @@ export const highlights = [
     period: "Sep 2026 – Present",
     badge: "Promoted",
     description:
-      "Promoted to Software Engineer: Building full-stack services, SAP Business One integration packages, Service Layer APIs, and business workflows.",
+      "Building full-stack web applications, backend APIs, and SAP Business One integrations.",
     icon: <FaBriefcase />,
   },
   {
@@ -90,7 +132,7 @@ export const highlights = [
     period: "Aug 2025 – Sep 2026",
     badge: "Associate",
     description:
-      "Contributed to enterprise integrations, custom SAP Customer Checkout (CCO) plugins (batch item splitting, receipt recalculations), and APIs.",
+      "Developed enterprise integrations, custom SAP Customer Checkout (CCO) plugins, and REST APIs.",
     icon: <FaCogs />,
   },
   {
@@ -100,17 +142,17 @@ export const highlights = [
     period: "Jan 2025 – Aug 2025",
     badge: "Internship",
     description:
-      "Contributed to multi-platform engineering deliverables-including travel applications, administrative portals, and desktop software.",
+      "Built features across web applications, admin portals, and desktop software.",
     icon: <FaServer />,
   },
   {
     id: 4,
     title: "BIT - Information Technology",
-    org: "University of Colombo School of Computing (UCSC)",
+    org: "University of Colombo",
     period: "Completed Aug 2025",
     badge: "Degree",
     description:
-      "Bachelor of Information Technology covering software engineering, full-stack development, database systems, and application design.",
+      "Bachelor of Information Technology covering software engineering, full-stack development, and databases.",
     icon: <FaGraduationCap />,
   },
 ];
@@ -125,11 +167,11 @@ export const timeline = [
     type: "work",
     badge: "Promoted",
     description:
-      "Promoted to Software Engineer, contributing across application development, APIs, and enterprise systems.",
+      "Promoted to Software Engineer, working across web applications, backend APIs, and enterprise integrations.",
     bullets: [
-      "Develop web applications and robust integration services using TypeScript, Node.js, and NestJS.",
-      "Implement SAP Business One integration packages, Service Layer APIs, and automated business workflows.",
-      "Manage database schemas and queries across MongoDB and SAP HANA (SQLScript).",
+      "Build full-stack web applications and backend services with TypeScript, React, Node.js, and NestJS.",
+      "Develop SAP Business One integrations and automated business workflows.",
+      "Design and maintain databases across MongoDB and SAP HANA.",
     ],
     tags: [
       "TypeScript",
@@ -137,7 +179,6 @@ export const timeline = [
       "Node.js",
       "React",
       "SAP Business One",
-      "Service Layer APIs",
       "MongoDB",
     ],
   },
@@ -150,18 +191,18 @@ export const timeline = [
     type: "work",
     badge: "Associate",
     description:
-      "Joined as Associate Software Engineer, developing enterprise integrations and custom POS extensions.",
+      "Developed enterprise integrations, POS extensions, and backend APIs.",
     bullets: [
-      "Built custom plugins and transaction processing logic (such as batch item splitting and receipt recalculations) for SAP Customer Checkout (CCO).",
-      "Developed REST APIs, data sync routines, and business logic for client systems.",
-      "Collaborated on feature delivery, testing, and production updates.",
+      "Built custom plugins and extensions for SAP Customer Checkout (CCO).",
+      "Developed REST APIs and data synchronization services for client systems.",
+      "Collaborated on feature delivery, testing, and production deployments.",
     ],
     tags: [
       "SAP Customer Checkout",
       "TypeScript",
       "Node.js",
       "REST APIs",
-      "SQLScript",
+      "SQL",
     ],
   },
   {
@@ -169,13 +210,13 @@ export const timeline = [
     date: "2025-08-15",
     dateLabel: "August 2025",
     title: "BIT (Bachelor of Information Technology)",
-    org: "University of Colombo School of Computing (UCSC)",
+    org: "University of Colombo",
     type: "education",
     badge: "Degree",
     description:
-      "Graduated with a Bachelor of Information Technology degree from UCSC.",
+      "Graduated with a Bachelor of Information Technology degree from UOC.",
     bullets: [
-      "Focused on core computer science principles, software engineering methodologies, database systems, and application development.",
+      "Focused on software engineering, full-stack development, database systems, and application design.",
     ],
     tags: [
       "Software Engineering",
@@ -193,10 +234,10 @@ export const timeline = [
     type: "work",
     badge: "Internship",
     description:
-      "Intern Software Engineer contributing to multi-platform engineering deliverables across web and desktop applications.",
+      "Contributed to web portals, travel applications, and desktop software.",
     bullets: [
-      "Developed modules for travel applications, administrative web portals, and desktop applications.",
-      "Assisted in software deployment, bug resolutions, and testing pipelines.",
+      "Built frontend and backend features for web portals and desktop applications.",
+      "Assisted with deployments, bug fixes, and testing.",
     ],
     tags: ["Web Applications", "Desktop Apps", "Full-Stack", "JavaScript"],
   },
@@ -205,7 +246,7 @@ export const timeline = [
     date: "2024-08-15",
     dateLabel: "August 2024",
     title: "Higher Diploma in Information Technology",
-    org: "University of Colombo School of Computing (UCSC)",
+    org: "University of Colombo",
     type: "education",
     description:
       "Covered full-stack development, software engineering practices, and database management.",
@@ -216,7 +257,7 @@ export const timeline = [
     date: "2024-07-15",
     dateLabel: "July 2024",
     title: "Diploma in Information Technology",
-    org: "University of Colombo School of Computing (UCSC)",
+    org: "University of Colombo",
     type: "education",
     description:
       "Fundamentals of programming, software engineering, and database design.",
@@ -268,8 +309,8 @@ export const skillGroups = [
     group: "Enterprise Ecosystems",
     domain: "ERP & Integrations",
     items: [
-      { name: "SAP Business One (B1)", icon: <SiSap /> },
-      { name: "SAP Customer Checkout (CCO)", icon: <SiSap /> },
+      { name: "SAP Business One", icon: <SiSap /> },
+      { name: "SAP Customer Checkout", icon: <SiSap /> },
       { name: "Service Layer APIs", icon: <FaNetworkWired /> },
       { name: "B1iF Integrations", icon: <FaCodeBranch /> },
     ],

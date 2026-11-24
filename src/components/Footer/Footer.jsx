@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiArrowUp } from "react-icons/hi";
+import { FaRegCopy, FaCheck } from "react-icons/fa";
 
 import { navLinks, profile, socialLinks } from "../../data";
 import SectionLink from "../SectionLink";
@@ -7,11 +9,23 @@ import "./Footer.css";
 import logo from "../../assets/logo.png";
 
 const Footer = () => {
+  const [copied, setCopied] = useState(false);
+
   const toTop = () => {
     if (window.__lenis) {
       window.__lenis.scrollTo(0, { duration: 1.2 });
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${profile.email}`;
     }
   };
 
@@ -22,13 +36,35 @@ const Footer = () => {
           {/* Identity */}
           <div className="footer-about">
             <Link to="/" className="brand footer-logo">
-              <img src={logo} alt="Logo" className="brand-logo" />
-              <span className="brand-name">{profile.name}</span>
+              <img src={logo} alt="RW Logo" className="brand-logo" />
+              <div className="brand-text">
+                <span className="brand-name">{profile.name}</span>
+                <span className="brand-role">{profile.role}</span>
+              </div>
             </Link>
             <p className="footer-blurb">
-              {profile.role} at {profile.company}. Architecting scalable backend
-              systems and robust enterprise integrations from {profile.location}.
+              {profile.role} at {profile.company}. Architecting scalable
+              full-stack web applications and robust enterprise SAP integrations
+              from {profile.location}.
             </p>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="footer-email"
+              title="Click to copy email"
+            >
+              {copied ? (
+                <>
+                  <FaCheck className="footer-email-ok" />
+                  <span>Copied to clipboard!</span>
+                </>
+              ) : (
+                <>
+                  <FaRegCopy />
+                  <span>{profile.email}</span>
+                </>
+              )}
+            </button>
           </div>
 
           {/* Sitemap */}

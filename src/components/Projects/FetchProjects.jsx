@@ -1,18 +1,29 @@
 import { createClient } from "contentful";
 import { useState, useEffect } from "react";
+import { fallbackProjects } from "../../data";
 
-const client = createClient({
-  space: "j7eawbkwg202",
-  environment: "master",
-  accessToken: import.meta.env.VITE_API_KEY,
-});
+const apiKey = import.meta.env.VITE_API_KEY;
+
+const client = apiKey
+  ? createClient({
+      space: "j7eawbkwg202",
+      environment: "master",
+      accessToken: apiKey,
+    })
+  : null;
 
 const useFetchProjects = (type) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(Boolean(client));
   const [error, setError] = useState(null);
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(client ? [] : fallbackProjects);
 
   useEffect(() => {
+    if (!client) {
+      setProjects(fallbackProjects);
+      setLoading(false);
+      return;
+    }
+
     let active = true;
 
     const getData = async () => {
@@ -20,21 +31,24 @@ const useFetchProjects = (type) => {
         const response = await client.getEntries({ content_type: type });
         if (!active) return;
 
-        setProjects(
-          response.items.map((data) => {
-            const { title, url, image, description, tags } = data.fields;
-            return {
-              id: data.sys.id,
-              title,
-              url,
-              description,
-              tags: Array.isArray(tags) ? tags : [],
-              img: image?.fields?.file?.url,
-            };
-          })
-        );
+        const items = response.items.map((data) => {
+          const { title, url, image, description, tags } = data.fields;
+          return {
+            id: data.sys.id,
+            title,
+            url,
+            description,
+            tags: Array.isArray(tags) ? tags : [],
+            img: image?.fields?.file?.url,
+          };
+        });
+
+        setProjects(items.length > 0 ? items : fallbackProjects);
       } catch (err) {
-        if (active) setError(err);
+        if (active) {
+          setError(err);
+          setProjects(fallbackProjects);
+        }
       } finally {
         if (active) setLoading(false);
       }

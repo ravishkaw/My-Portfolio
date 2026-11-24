@@ -24,7 +24,7 @@ const Achievements = () => {
   usePageMeta({
     title: "Achievements & Experience - Ravishka Wijerathne",
     description:
-      "Software Engineer milestones, enterprise SAP integrations, backend architectures, and Bachelor of Information Technology degree from UCSC.",
+      "Software Engineer milestones, enterprise SAP integrations, backend architectures, and Bachelor of Information Technology degree from UOC.",
     path: "/achievements",
   });
 
@@ -65,9 +65,7 @@ const Achievements = () => {
                       <h2 className="timeline-title">{title}</h2>
                       <p className="timeline-org">{org}</p>
                     </div>
-                    {badge && (
-                      <span className="timeline-badge">{badge}</span>
-                    )}
+                    {badge && <span className="timeline-badge">{badge}</span>}
                   </div>
 
                   <p className="timeline-desc">{description}</p>

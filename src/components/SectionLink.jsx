@@ -36,7 +36,7 @@ const SectionLink = ({ section, className, children, onNavigate, ...rest }) => {
         const target = document.getElementById(section);
         if (target) {
           if (window.__lenis) {
-            window.__lenis.scrollTo(target, { offset: -65, duration: 1.15 });
+            window.__lenis.scrollTo(target, { offset: -20, duration: 1.15 });
           } else {
             target.scrollIntoView({ behavior: "smooth", block: "start" });
           }

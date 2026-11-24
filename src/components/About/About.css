@@ -88,6 +88,12 @@
   font-weight: 600;
 }
 
+.about-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
 /* 3-Column Focus Mini-Bento */
 .about-focus-grid {
   display: grid;
@@ -153,12 +159,6 @@
   line-height: 1.45;
   color: var(--text-muted);
   margin-bottom: 0;
-}
-
-.about-cta-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
 }
 
 /* Highlights Column */

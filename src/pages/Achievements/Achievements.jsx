@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaArrowLeft,
@@ -20,13 +21,30 @@ const typeIcon = {
 };
 
 const Achievements = () => {
-  useReveal();
+  const [filter, setFilter] = useState("all");
+
+  const filteredTimeline = timeline.filter((item) => {
+    if (filter === "work") return item.type === "work";
+    if (filter === "education")
+      return item.type === "education" || item.type === "certification";
+    return true;
+  });
+
+  useReveal([filter]);
   usePageMeta({
     title: "Achievements & Experience - Ravishka Wijerathne",
     description:
-      "Software Engineer milestones, enterprise SAP integrations, backend architectures, and Bachelor of Information Technology degree from UOC.",
+      "Software Engineer milestones, enterprise SAP integrations, backend architectures, and Bachelor of Information Technology degree from UCSC.",
     path: "/achievements",
   });
+
+  const counts = {
+    all: timeline.length,
+    work: timeline.filter((i) => i.type === "work").length,
+    education: timeline.filter(
+      (i) => i.type === "education" || i.type === "certification"
+    ).length,
+  };
 
   return (
     <section className="section page-section">
@@ -35,16 +53,63 @@ const Achievements = () => {
           <FaArrowLeft /> Back home
         </Link>
 
-        <div className="section-head">
-          <p className="section-eyebrow">Milestones</p>
-          <h1 className="section-title">Achievements &amp; Career</h1>
-          <p className="section-subtitle">
-            Degrees, certifications, engineering roles, and promotions.
-          </p>
+        <div className="section-head journey-head" data-watermark="MILESTONES">
+          <div>
+            <p className="section-eyebrow">Milestones</p>
+            <h1 className="section-title">
+              Achievements &amp; <span className="gradient-text">Career</span>
+            </h1>
+            <p className="section-subtitle">
+              Full timeline of engineering roles, responsibilities, degrees, and
+              certifications.
+            </p>
+          </div>
+
+          <div
+            className="timeline-filters"
+            role="tablist"
+            aria-label="Filter milestones"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected={filter === "all"}
+              className={`timeline-filter-btn ${
+                filter === "all" ? "is-active" : ""
+              }`}
+              onClick={() => setFilter("all")}
+            >
+              All <span className="timeline-filter-count">{counts.all}</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={filter === "work"}
+              className={`timeline-filter-btn ${
+                filter === "work" ? "is-active" : ""
+              }`}
+              onClick={() => setFilter("work")}
+            >
+              Experience{" "}
+              <span className="timeline-filter-count">{counts.work}</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={filter === "education"}
+              className={`timeline-filter-btn ${
+                filter === "education" ? "is-active" : ""
+              }`}
+              onClick={() => setFilter("education")}
+            >
+              Education &amp; Certs{" "}
+              <span className="timeline-filter-count">{counts.education}</span>
+            </button>
+          </div>
         </div>
 
         <ol className="timeline">
-          {timeline.map(
+          {filteredTimeline.map(
             ({
               id,
               dateLabel,
@@ -56,7 +121,12 @@ const Achievements = () => {
               bullets,
               tags,
             }) => (
-              <li key={id} className={`timeline-item reveal timeline-${type}`}>
+              <li
+                key={id}
+                className={`timeline-item reveal is-visible timeline-${type} ${
+                  id === 1 ? "timeline-current" : ""
+                }`}
+              >
                 <span className="timeline-marker">{typeIcon[type]}</span>
                 <div className="card timeline-card">
                   <div className="timeline-card-header">

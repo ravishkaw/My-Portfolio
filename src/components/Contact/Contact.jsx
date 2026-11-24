@@ -22,7 +22,7 @@ const Contact = () => {
         <div className="card contact-panel reveal">
           <div className="contact-copy">
             <p className="section-eyebrow">
-              <span className="section-index">05</span> &#47;&#47; Contact
+              <span className="section-index">04</span> &#47;&#47; Contact
             </p>
             <h2 className="section-title">
               Let&apos;s build something{" "}

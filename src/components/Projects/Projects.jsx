@@ -15,11 +15,11 @@ const Projects = () => {
       <div className="container">
         <div
           className="section-head projects-head reveal"
-          data-watermark="04 // WORK"
+          data-watermark="03 // WORK"
         >
           <div>
             <p className="section-eyebrow">
-              <span className="section-index">04</span> &#47;&#47; Work
+              <span className="section-index">03</span> &#47;&#47; Work
             </p>
             <h2 className="section-title">
               Featured <span className="gradient-text">Projects</span>

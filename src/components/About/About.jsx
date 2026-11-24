@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   FaArrowRight,
   FaLayerGroup,
@@ -96,9 +97,9 @@ const About = () => {
               </div>
 
               <div className="about-cta-group">
-                <SectionLink section="journey" className="btn btn-primary">
-                  View my journey <FaArrowRight />
-                </SectionLink>
+                <Link to="/achievements" className="btn btn-primary">
+                  Full career &amp; timeline <FaArrowRight />
+                </Link>
                 <SectionLink section="contact" className="btn btn-ghost">
                   Get in touch
                 </SectionLink>

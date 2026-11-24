@@ -20,9 +20,9 @@ const Skills = () => {
   return (
     <section className="section" id="skills">
       <div className="container">
-        <div className="section-head reveal" data-watermark="03 // STACK">
+        <div className="section-head reveal" data-watermark="02 // STACK">
           <p className="section-eyebrow">
-            <span className="section-index">03</span> &#47;&#47; Toolbox
+            <span className="section-index">02</span> &#47;&#47; Toolbox
           </p>
           <h2 className="section-title">
             Skills &amp; <span className="gradient-text">Technologies</span>

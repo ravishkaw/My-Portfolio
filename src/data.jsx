@@ -60,10 +60,9 @@ export const profile = {
 export const navLinks = [
   { id: 1, name: "Home", url: "/", section: "home" },
   { id: 2, name: "About", url: "/#about", section: "about" },
-  { id: 3, name: "Journey", url: "/#journey", section: "journey" },
-  { id: 4, name: "Skills", url: "/#skills", section: "skills" },
-  { id: 5, name: "Projects", url: "/#projects", section: "projects" },
-  { id: 6, name: "Contact", url: "/#contact", section: "contact" },
+  { id: 3, name: "Skills", url: "/#skills", section: "skills" },
+  { id: 4, name: "Projects", url: "/#projects", section: "projects" },
+  { id: 5, name: "Contact", url: "/#contact", section: "contact" },
 ];
 
 export const stats = [
